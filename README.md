@@ -22,7 +22,7 @@ cd TH-IGN
 python -m venv venv
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
 .\venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 ## Running
@@ -59,7 +59,7 @@ python3 -m pytest tests/ -v
 
 ## Overview
 
-**Scraping**: Fetches from CISA KEV (JSON), NVD API (last 7 days), and CISA Advisories (XML). Each source is tried independently — if one fails you still get data from the others.
+**Scraping**: Fetches from CISA KEV (JSON), NVD API (last 7 days), and CISA Advisories (XML). Each source is tried independently, if one fails you still get data from the others.
 
 **Asset matching**: Your monitored assets (in `data/monitored_assets.json`) are matched against CVE vendor/product fields. Names are normalized so "node_js" matches "Node.js", "open-ssl" matches "OpenSSL", etc.
 
