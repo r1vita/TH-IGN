@@ -2,12 +2,8 @@
 
 Simple Python script that scrapes CVE databases and compares to a local dabatase ASsets and exports structured `.csv` reports.
 
----
-
 ## Screenshots
 ![CLI Interface Overview](data/screenshot.png)
-
----
 
 ## Step 1 - Installation & Setup
 
@@ -28,8 +24,6 @@ python -m venv venv
 .\venv\Scripts\activate
 pip install -r requirements.txt
 ```
-
----
 
 ## Step 2 - Run the .py file
 ```bash
