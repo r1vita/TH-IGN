@@ -66,9 +66,3 @@ python3 -m pytest tests/ -v
 **Risk levels**: Matched threats are flagged as HIGH or CRITICAL based on the original severity. MEDIUM/LOW are not flagged as active risks.
 
 **Storage**: Fetched CVEs go into `data/vulnerabilities.json`. Running fetch again won't create duplicates. CSV export goes wherever you choose.
-
-## Screenshots
-
-| Main Interface | Asset Overview | Report/Export Action |
-| :---: | :---: | :---: |
-| <img src="screenshots/ss1.png" width="300" alt="Main Interface"> | <img src="screenshots/ss2.png" width="300" alt="Asset Selection"> | <img src="screenshots/ss3.png" width="300" alt="Report Export"> |
