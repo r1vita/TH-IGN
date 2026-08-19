@@ -1,0 +1,34 @@
+## Install
+
+```bash
+pip install -r requirements.txt (Might do a docker build so I wouldn't do this ?)
+```
+
+## Run
+
+```bash
+python3 main.py
+```
+
+## Monitored Assets
+
+Edit `data/monitored_assets.json` with your desired content :
+
+```json
+EXAMPLE : ["Chrome", "Apache", "Python", "Windows Server"]
+```
+
+## Project Structure
+
+```
+main.py                      # CLI interface
+models/vulnerability.py      # Vulnerability data 
+scrapers/threat_scraper.py   # CVE Scraper
+utils/storage.py             # JSON file read/write
+utils/asset_matcher.py       # Matches CVEs to assets
+utils/report_generator.py    # CSV export
+data/monitored_assets.json   # Your desired assets list
+data/vulnerabilities.json    # Stored CVE database (auto-generated)
+data/threat_report.csv       # Exported report (auto-generated)
+data/settings.json           # App settings (auto-generated)
+```
