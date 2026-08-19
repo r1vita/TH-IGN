@@ -47,11 +47,11 @@ def print_header(status):
 
 def print_menu(selected=None):
     items = [
-        ("1", "Fetch & Update Threat Feeds", "Download latest CVE data"),
+        ("1", "Fetch & Update Feeds", "Download latest CVE data"),
         ("2", "Scan Local Assets Against Threat Database", "Match assets against known CVEs"),
         ("3", "Search Vulnerability by Keyword/Vendor", "Find vulnerabilities"),
         ("4", "Export Threat Report to CSV", "Save data to a CSV file"),
-        ("5", "Exit", "Close ThreatIntel Engine"),
+        ("5", "Exit", "Close TH-IGN"),
     ]
     print()
     print(colored("  Main Menu", BOLD))
@@ -93,7 +93,7 @@ def read_status(matcher, storage):
 
 def do_fetch(scraper, storage):
     print()
-    print(colored("  Downloading threat data...", YELLOW))
+    print(colored("  Downloading data...", YELLOW))
     print()
     vulns, results = scraper.scrape_all()
 
@@ -112,7 +112,7 @@ def do_fetch(scraper, storage):
 
     print()
     if all_fail:
-        print(colored("  FAILED: All threat sources unreachable. No data downloaded.", RED))
+        print(colored("  FAILED: All sources unreachable. No data downloaded.", RED))
         print(colored("  Check your internet connection and try again.", DIM))
     elif added > 0:
         print(colored(f"  {len(vulns)} vulnerabilities fetched ({added} new, {duplicates} duplicates)", GREEN))
@@ -304,7 +304,7 @@ def do_del_asset(matcher, storage):
     for i, a in enumerate(assets):
         print(f"    {i + 1}. {a}")
     print()
-    choice = input("  Remove which? (#)> ").strip()
+    choice = input("  Remove which ? (#)> ").strip()
 
     if choice.isdigit():
         idx = int(choice) - 1
@@ -327,7 +327,7 @@ def main():
     report = ReportGenerator(storage)
 
     print()
-    print(colored("  ThreatIntel Engine v" + VERSION, BOLD + CYAN))
+    print(colored("  TH-IGN v" + VERSION, BOLD + CYAN))
     print(colored("  Press Ctrl+C at any time to exit.", DIM))
 
     try:
@@ -386,7 +386,7 @@ def run_tools_menu(matcher, storage):
 
 def run_demo_milestone1():
     scraper = ThreatScraper()
-    print(colored("\n  === Milestone 1 Demonstration ===", BOLD + CYAN))
+    print(colored("\n Milestone 1 Demonstration", BOLD + CYAN))
     print(colored("  Fetching live CVE data from multiple sources...\n", DIM))
     vulns, results = scraper.scrape_all()
     print(colored("  Source results:", BOLD))
@@ -411,7 +411,7 @@ def run_demo_milestone2(vulns):
     storage = Storage()
     matcher = AssetMatcher(storage)
     assets = matcher.load_assets()
-    print(colored("\n  === Milestone 2 Demonstration ===", BOLD + CYAN))
+    print(colored("\n Milestone 2 Demonstration", BOLD + CYAN))
     print(colored(f"  Monitored assets: {', '.join(assets)}", BOLD))
     print()
     if not vulns:
@@ -438,7 +438,7 @@ def run_demo_milestone2(vulns):
 
 
 def run_demo_milestone3(storage, matches=None):
-    print(colored("\n  === Milestone 3 Demonstration ===", BOLD + CYAN))
+    print(colored("\n Milestone 3 Demonstration", BOLD + CYAN))
     vulns_dicts = storage.load("vulnerabilities.json", default=[])
     print(colored(f"  Database contains {len(vulns_dicts)} vulnerabilities.", BOLD))
     print()
