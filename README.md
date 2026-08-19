@@ -1,7 +1,7 @@
 ## Install
 
 ```bash
-pip install -r requirements.txt (Might do a docker build so I wouldn't do this ?)
+pip install -r requirements.txt
 ```
 
 ## Run
