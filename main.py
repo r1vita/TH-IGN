@@ -1,5 +1,6 @@
 import os
 import sys
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -45,10 +46,10 @@ def _truncate(text, max_len):
     text = str(text)
     if len(text) <= max_len:
         return text
-    return text[:max_len - 3] + "..."
+    return text[: max_len - 3] + "..."
 
 
-#terminal stuff 
+# terminal stuff
 
 _SAVED_TERM_ATTRS = None
 
@@ -56,7 +57,7 @@ _SAVED_TERM_ATTRS = None
 def enter_raw_mode():
     global _SAVED_TERM_ATTRS
     if os.name == "nt":
-        #Windows doesn't need raw terminal setup for msvcrt
+        # Windows doesn't need raw terminal setup for msvcrt
         return
     import termios, tty
     fd = sys.stdin.fileno()
@@ -68,7 +69,7 @@ def enter_raw_mode():
 def exit_raw_mode():
     global _SAVED_TERM_ATTRS
     if os.name == "nt":
-        #Windows doesn't use termios to exit raw mode
+        # Windows doesn't use termios to exit raw mode
         return
     import termios
     fd = sys.stdin.fileno()
@@ -89,10 +90,12 @@ def _get_key_windows():
     if ch in ("\x00", "\xe0"):
         arrow = msvcrt.getwch()
         return {"H": "up", "P": "down", "M": "right", "K": "left"}.get(arrow, arrow)
-    if ch == "\r":
+    if ch in ("\r", "\n"):
         return "enter"
     if ch == "\x03":
         return "ctrl-c"
+    if ch == "\x1b":
+        return "esc"
     if ch in ("\x7f", "\x08"):
         return "backspace"
     return ch
@@ -181,17 +184,17 @@ def _get_suggested_dirs():
         p = home / name
         if p.exists():
             dirs.append(str(p))
-    #project own data folder coz easier
+    # project own data folder coz easier
     project_data = str(Path(__file__).resolve().parent / "data")
     dirs.append(project_data)
-    dirs.append("/tmp")
+    dirs.append(tempfile.gettempdir())
     return dirs
 
 
 class ThreatIntelApp:
 
     def __init__(self, console=None):
-        self.console = console or Console()
+        self.console = console or Console(force_terminal=True)
         self.storage = Storage()
         self.scraper = ThreatScraper()
         self.matcher = AssetMatcher(self.storage)
@@ -215,7 +218,7 @@ class ThreatIntelApp:
         self.status = self._read_status()
         self.quit_requested = False
 
-        #scrollable view state
+        # scrollable view state
         self._scroll_heading = Text("")
         self._scroll_entries = []
         self._scroll_columns = []
@@ -224,7 +227,7 @@ class ThreatIntelApp:
 
         self._last_search_results = []
 
-        #sub-menus for export
+        # sub-menus for export
         self._export_active = False
         self._export_selected = 0
         self._export_options = [
@@ -255,7 +258,7 @@ class ThreatIntelApp:
     def _refresh_status(self):
         self.status = self._read_status()
 
-    #scrollable list render
+    # scrollable list render
 
     def _set_scrollable(self, heading, entries, columns, title=""):
         self._scroll_heading = heading
@@ -327,7 +330,7 @@ class ThreatIntelApp:
             return True
         return False
 
-    #panels
+    # panels
 
     def _idle_panel(self):
         group = Group(
@@ -569,8 +572,7 @@ class ThreatIntelApp:
             return True
         return True
 
-    # -- actions --
-
+    # actions
     def do_fetch(self):
         self._set_output(Panel(
             Group(
@@ -1049,7 +1051,7 @@ class ThreatIntelApp:
                     if not rows:
                         self.console.print("  Nothing to export.", style=WARN)
                     else:
-                        default_path = "data/threat_report.csv"
+                        default_path = os.path.join("data", "threat_report.csv")
                         dirs = _get_suggested_dirs()
                         self.console.print("\n  Suggested directories:")
                         for i, d in enumerate(dirs):
