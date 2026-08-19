@@ -57,7 +57,7 @@ Runs through all milestones and prints sample output.
 python3 -m pytest tests/ -v
 ```
 
-## How it works
+## Overview
 
 **Scraping**: Fetches from CISA KEV (JSON), NVD API (last 7 days), and CISA Advisories (XML). Each source is tried independently — if one fails you still get data from the others.
 
