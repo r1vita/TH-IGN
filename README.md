@@ -17,7 +17,7 @@ git clone https://github.com/r1vita/TH-IGN.git
 cd TH-IGN
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ### Windows (! POWERSHELL !)
@@ -25,8 +25,9 @@ pip install -r requirements.txt
 git clone https://github.com/r1vita/TH-IGN.git
 cd TH-IGN
 python -m venv venv
+Set-ExecutionPolicy -ExecutionPolicy Process -Scope CurrentUser
 .\venv\Scripts\activate
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ## Step 2 - Run the .py file
