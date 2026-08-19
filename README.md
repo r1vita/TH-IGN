@@ -1,6 +1,8 @@
 ## Install
 
 ```bash
+git clone https://github.com/r1vita/TH-IGN.git
+cd TH-IGN
 pip install -r requirements.txt
 ```
 
@@ -12,7 +14,7 @@ python3 main.py
 
 ## Monitored Assets
 
-Edit `data/monitored_assets.json` with your desired content :
+Add/Remove Assets directly from the CLI or edit `data/monitored_assets.json` with your desired content :
 
 ```json
 EXAMPLE : ["Chrome", "Apache", "Python", "Windows Server"]
