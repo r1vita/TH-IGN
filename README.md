@@ -4,7 +4,7 @@ Simple Python script that scrapes CVE databases and compares to a local dabatase
 
 ## Screenshots
 
-| Main Interface | Asset Selection | Report Export |
+| Main Interface | Asset Overview | Report/Export Action |
 | :---: | :---: | :---: |
 | <img src="screenshots/ss1.png" width="300" alt="Main Interface"> | <img src="screenshots/ss2.png" width="300" alt="Asset Selection"> | <img src="screenshots/ss3.png" width="300" alt="Report Export"> |
 
