@@ -20,7 +20,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Windows
+### Windows (! POWERSHELL !)
 ```powershell
 git clone https://github.com/r1vita/TH-IGN.git
 cd TH-IGN
