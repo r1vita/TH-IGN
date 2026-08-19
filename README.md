@@ -1,49 +1,8 @@
 # TH-IGN
 
-A Python tool that scrapes CVE databases and known exploit feeds, matches them against your monitored assets, and exports structured CSV reports.
+Python script that scrapes CVE databases and known exploits, compares them against local assets, and exports CSV reports.
 
-## Project Structure
-
-```
-TH-IGN/
-├── main.py                     # CLI entry point and demonstrations
-├── requirements.txt            # Python dependencies
-├── README.md
-├── .gitignore
-├── data/
-│   ├── monitored_assets.json   # List of monitored software assets
-│   ├── vulnerabilities.json    # Stored CVE database (generated)
-│   └── matched_vulnerabilities.json  # Last scan results (generated)
-├── models/
-│   └── vulnerability.py        # Vulnerability data class
-├── scrapers/
-│   └── threat_scraper.py       # CVE feed scrapers (CISA KEV, NVD, CISA)
-├── utils/
-│   ├── asset_matcher.py        # Asset to vulnerability logic 
-│   ├── report_generator.py     # CSV report generation
-│   └── storage.py              # JSON file storage and duplicate handling
-├── tests/
-│   ├── test_vulnerability.py   # Vulnerability model tests
-│   ├── test_threat_scraper.py  # Scraper parsing tests
-│   ├── test_storage.py         # Storage and merge tests
-│   ├── test_asset_matcher.py   # Asset matching tests
-│   └── test_report_generator.py # CSV export tests
-└── screenshots/
-    ├── ss1.png
-    ├── ss2.png
-    └── ss3.png
-```
-
-## Module Overview
-
-- **models/vulnerability.py** — `Vulnerability` class with severity normalization, CVE ID validation, and serialization.
-- **scrapers/threat_scraper.py** — `ThreatScraper` fetches from CISA KEV, NVD (recent 7 days), and CISA Advisories. Reports per-source success/failure.
-- **utils/asset_matcher.py** — `AssetMatcher` normalizes names (spaces, hyphens, underscores, aliases) and matches vulnerabilities to monitored assets. Risk is set to HIGH or CRITICAL only.
-- **utils/storage.py** — `Storage` handles JSON read/write with saves, corruption recovery, aswell as duplicate prevention.
-- **utils/report_generator.py** — `ReportGenerator` exports matched, full, or search results to CSV with proper headers.
-- **main.py** — Interactive CLI with menu `[1]`–`[5]` and a `--demo` mode for demonstrations.
-
-## Step 1 — Installation & Setup
+## Setup
 
 ### Linux / macOS
 
@@ -52,7 +11,7 @@ git clone https://github.com/r1vita/TH-IGN.git
 cd TH-IGN
 python3 -m venv venv
 source venv/bin/activate
-python3 -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Windows (PowerShell)
@@ -66,85 +25,47 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
 python -m pip install -r requirements.txt
 ```
 
-## Step 2 — Run
-
-### Interactive Mode
+## Running
 
 ```bash
 python3 main.py
 ```
 
-### Demonstrations
+This opens the interactive menu:
+
+```
+  [1] Fetch & Update Threat Feeds
+  [2] Scan Local Assets Against Threat Database
+  [3] Search Vulnerability by Keyword/Vendor
+  [5] Export Threat Report to CSV
+  [5] Exit
+```
+
+Type `a` from the main prompt for the Tools menu (add/remove assets, view all CVEs).
+
+### Demo Demonstration mode
 
 ```bash
 python3 main.py --demo
 ```
 
-### Run Tests
+Runs and prints sample output.
+
+### Tests
 
 ```bash
 python3 -m pytest tests/ -v
 ```
 
-## CLI Menu
+## How it works
 
-```
-  Main Menu
+**Scraping**: Fetches from CISA KEV (JSON), NVD API (last 7 days), and CISA Advisories (XML). Each source is tried independently, if one fails you still get data from the others.
 
-  > [1] Fetch & Update Threat Feeds
-      Download latest CVE data
+**Asset matching**: Your monitored assets (in `data/monitored_assets.json`) are matched against CVE vendor/product fields. Names are normalized so "node_js" matches "Node.js", "open-ssl" matches "OpenSSL", etc..
 
-    [2] Scan Local Assets Against Threat Database
-        Match assets against known CVEs
+**Risk levels**: Matched threats are flagged as HIGH or CRITICAL based on the original severity. MEDIUM/LOW are not flagged as active risks.
 
-    [3] Search Vulnerability by Keyword/Vendor
-        Find vulnerabilities
-
-    [4] Export Threat Report to CSV
-        Save data to a CSV file
-
-    [5] Exit
-        Close TH-IGN
-```
-
-Type `a`, `r`, `v`, or `t` from the main prompt for the Tools menu (Add Asset, Remove Asset, View All CVEs).
-
-## Threat Intelligence Sources
-
-| Source | URL | Type |
-|--------|-----|------|
-| CISA Known Exploited Vulnerabilities | `cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json` | JSON |
-| NVD CVE API 2.0 | `services.nvd.nist.gov/rest/json/cves/2.0` | JSON (last 7 days) |
-| CISA Advisories | `cisa.gov/cybersecurity-advisories/all.xml` | XML (HTML fallback) |
-
-## Asset Matching 
-
-1. Each monitored asset name is normalized (lowercased, whitespace standardized) and expanded using known aliases (EXAMPLE :  "Chrome" matches "google chrome", "chromium").
-2. Vulnerability vendor, product, and description fields are normalized the same way.
-3. A match occurs when an asset alias is a substring of (or equals) any vulnerability field.
-4. Matched threats are assigned risk levels: only CRITICAL and HIGH severity vulns are flagged; all others are marked UNKNOWN.
-
-## Risk Levels 
-
-Risk comes from the vulnerability's original severity as reported by the source (CISA KEV estimate or NVD CVSS score). Matched threats inherit the severity but risk is capped: only CRITICAL and HIGH severities are reported as risks. MEDIUM, LOW, and UNKNOWN severities are not flagged as active risks.
-
-## Generated Files
-
-| File | Location | Description |
-|------|----------|-------------|
-| `vulnerabilities.json` | `data/` | All fetched CVE records |
-| `matched_vulnerabilities.json` | `data/` | Results of last asset scan |
-| `threat_report.csv` | user-chosen path | Exported CSV report |
-
-## Monitored Assets
-
-Default assets in `data/monitored_assets.json`:
-
-```json
-["Chrome", "Apache", "Python", "Windows Server", "OpenSSL", "Nginx", "Firefox", "PostgreSQL"]
-```
-
-Add or remove assets via the Tools menu or by editing the JSON file directly.
+**Storage**: Fetched CVEs go into `data/vulnerabilities.json`. Running fetch again won't create duplicates. CSV export goes wherever you choose.
 
 ## Screenshots
 
