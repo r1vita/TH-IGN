@@ -55,6 +55,9 @@ _SAVED_TERM_ATTRS = None
 
 def enter_raw_mode():
     global _SAVED_TERM_ATTRS
+    if os.name == "nt":
+        #Windows doesn't need raw terminal setup for msvcrt
+        return
     import termios, tty
     fd = sys.stdin.fileno()
     if _SAVED_TERM_ATTRS is None:
@@ -64,6 +67,9 @@ def enter_raw_mode():
 
 def exit_raw_mode():
     global _SAVED_TERM_ATTRS
+    if os.name == "nt":
+        #Windows doesn't use termios to exit raw mode
+        return
     import termios
     fd = sys.stdin.fileno()
     if _SAVED_TERM_ATTRS is not None:
