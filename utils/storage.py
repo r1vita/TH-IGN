@@ -24,16 +24,28 @@ class Storage:
         return self._path(filename)
 
     def load(self, filename, default=None):
+        path = self._path(filename)
         try:
-            with open(self._path(filename), "r", encoding="utf-8") as f:
+            with open(path, "r", encoding="utf-8") as f:
                 return json.load(f)
-        except (FileNotFoundError, json.JSONDecodeError, OSError):
+        except FileNotFoundError:
+            return default
+        except json.JSONDecodeError:
+            return default
+        except OSError:
             return default
 
     def save(self, filename, payload):
         path = self._path(filename)
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(payload, f, indent=2, ensure_ascii=False)
+        tmp_path = path + ".tmp"
+        try:
+            with open(tmp_path, "w", encoding="utf-8") as f:
+                json.dump(payload, f, indent=2, ensure_ascii=False)
+            os.replace(tmp_path, path)
+        except OSError:
+            if os.path.exists(tmp_path):
+                os.remove(tmp_path)
+            raise
         return path
 
     def load_settings(self):
@@ -49,14 +61,33 @@ class Storage:
         existing = self.load("vulnerabilities.json", default=[])
         if not isinstance(existing, list):
             existing = []
-        by_id = {item["cve_id"]: item for item in existing if item.get("cve_id")}
+
+        by_id = {}
+        for item in existing:
+            if isinstance(item, dict) and item.get("cve_id"):
+                by_id[item["cve_id"]] = item
+
         added = 0
+        duplicates = 0
+        skipped = 0
         for vuln in vulnerabilities:
             entry = vuln.to_dict()
-            if entry["cve_id"] and entry["cve_id"] not in by_id:
-                by_id[entry["cve_id"]] = entry
-                added += 1
+            cve_id = entry.get("cve_id", "")
+            if not cve_id:
+                skipped += 1
+                continue
+            if cve_id in by_id:
+                duplicates += 1
+                continue
+            by_id[cve_id] = entry
+            added += 1
+
         merged = list(by_id.values())
         merged.sort(key=lambda item: item.get("date_added", ""), reverse=True)
         self.save("vulnerabilities.json", merged)
-        return added, len(merged)
+        return {
+            "added": added,
+            "total": len(merged),
+            "duplicates": duplicates,
+            "skipped": skipped,
+        }

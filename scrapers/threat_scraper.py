@@ -1,5 +1,12 @@
+import re
+import warnings
+from datetime import datetime, timedelta, timezone
+
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, XMLParsedAsHTMLWarning
+
+warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
+
 from models.vulnerability import Vulnerability
 
 KEV_JSON_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
@@ -7,17 +14,26 @@ KEV_HTML_URL = "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
 NVD_API_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 CISA_ADVISORIES_URL = "https://www.cisa.gov/cybersecurity-advisories/all.xml"
 
-#vendors that tend to have high impact vulns
+CVE_RE = re.compile(r"CVE-\d{4}-\d{4,}")
+
 HIGH_IMPACT_VENDORS = {
     "microsoft", "adobe", "oracle", "vmware", "citrix", "fortinet",
     "palo alto", "cisco", "apple", "solarwinds", "ivanti", "progress", "google",
 }
 
-#keywords in descriptions 
 CRITICAL_HINTS = (
     "remote code execution", "unauthenticated", "arbitrary code",
     "privilege escalation", "full compromise", "ransomware",
 )
+
+
+class FetchResult:
+    def __init__(self, source, vulns=None, error=None):
+        self.source = source
+        self.vulns = vulns or []
+        self.error = error
+        self.success = error is None
+        self.partial = error is not None and len(self.vulns) > 0
 
 
 class ThreatScraper:
@@ -29,6 +45,7 @@ class ThreatScraper:
 
     def scrape_all(self):
         all_vulns = []
+        results = []
         sources = [
             ("CISA KEV", self.scrape_kev_catalog),
             ("NVD Recent", self.scrape_nvd),
@@ -36,11 +53,20 @@ class ThreatScraper:
         ]
         for name, func in sources:
             try:
-                result = func()
-                all_vulns.extend(result)
-            except Exception:
-                pass
-        return self._deduplicate(all_vulns)
+                vulns = func()
+                all_vulns.extend(vulns)
+                results.append(FetchResult(name, vulns=vulns))
+            except requests.exceptions.ConnectionError as e:
+                results.append(FetchResult(name, error=f"Connection failed: {e}"))
+            except requests.exceptions.Timeout as e:
+                results.append(FetchResult(name, error=f"Request timed out: {e}"))
+            except requests.exceptions.RequestException as e:
+                results.append(FetchResult(name, error=f"Network error: {e}"))
+            except Exception as e:
+                results.append(FetchResult(name, error=f"Parse error: {e}"))
+
+        deduped = self._deduplicate(all_vulns)
+        return deduped, results
 
     def _deduplicate(self, vulns):
         seen = {}
@@ -56,21 +82,29 @@ class ThreatScraper:
             r.raise_for_status()
             return self._parse_kev_json(r.json())
         except Exception:
-            # fall back to html if the json endpoint is down
             return self.scrape_html_feed(KEV_HTML_URL)
 
     def _parse_kev_json(self, data):
         vulns = []
         for e in data.get("vulnerabilities", []):
-            if not e.get("cveID"):
+            cve_id = e.get("cveID", "")
+            if not cve_id:
+                continue
+            cve_match = CVE_RE.search(cve_id)
+            if cve_match:
+                cve_id = cve_match.group(0)
+            else:
                 continue
             vulns.append(Vulnerability(
-                cve_id=e.get("cveID", ""),
+                cve_id=cve_id,
                 vendor=e.get("vendorProject", ""),
                 product=e.get("product", ""),
                 vulnerability_name=e.get("vulnerabilityName", ""),
                 date_added=e.get("dateAdded", ""),
-                severity=self._estimate_severity(e.get("vendorProject", ""), e.get("shortDescription", "")),
+                severity=self._estimate_severity(
+                    e.get("vendorProject", ""),
+                    e.get("shortDescription", ""),
+                ),
             ))
         return vulns
 
@@ -96,21 +130,39 @@ class ThreatScraper:
             cve = self._find_cve(rec)
             if not cve:
                 continue
+            cve_match = CVE_RE.search(cve)
+            if cve_match:
+                cve = cve_match.group(0)
+            else:
+                continue
             vulns.append(Vulnerability(
                 cve_id=cve,
                 vendor=self._find_column(rec, "vendor"),
                 product=self._find_column(rec, "product"),
                 vulnerability_name=self._find_column(rec, "name", "title"),
                 date_added=self._find_column(rec, "date"),
-                severity=self._estimate_severity(self._find_column(rec, "vendor"), self._find_column(rec, "name", "title")),
+                severity=self._estimate_severity(
+                    self._find_column(rec, "vendor"),
+                    self._find_column(rec, "name", "title"),
+                ),
             ))
         return vulns
 
     def scrape_nvd(self):
-        params = {"resultsPerPage": 100, "startIndex": 0}
+        now = datetime.now(timezone.utc)
+        start = now - timedelta(days=7)
+        params = {
+            "resultsPerPage": 100,
+            "startIndex": 0,
+            "lastModStartDate": start.strftime("%Y-%m-%dT%H:%M:%S.000"),
+            "lastModEndDate": now.strftime("%Y-%m-%dT%H:%M:%S.000"),
+        }
         r = self.session.get(NVD_API_URL, params=params, timeout=self.timeout)
         r.raise_for_status()
         data = r.json()
+        return self._parse_nvd_response(data)
+
+    def _parse_nvd_response(self, data):
         vulns = []
         for item in data.get("vulnerabilities", []):
             cve = item.get("cve", {})
@@ -137,7 +189,7 @@ class ThreatScraper:
         return vulns
 
     def _nvd_severity(self, metrics):
-        for key in ("cvssMetricV31", "cvssMetricV30", "cvssMetricV2"):
+        for key in ("cvssMetricV31", "cvssMetricV30"):
             list_ = metrics.get(key, [])
             if not list_:
                 continue
@@ -145,7 +197,6 @@ class ThreatScraper:
             sev = cvss.get("baseSeverity", "")
             if sev:
                 return sev.upper()
-            # no explicit severity, try to infer from score
             score = cvss.get("baseScore", 0)
             if score >= 9.0:
                 return "CRITICAL"
@@ -154,6 +205,21 @@ class ThreatScraper:
             if score >= 4.0:
                 return "MEDIUM"
             return "LOW"
+
+        v2_list = metrics.get("cvssMetricV2", [])
+        if v2_list:
+            v2_data = v2_list[0]
+            sev = v2_data.get("baseSeverity", "")
+            if sev:
+                return sev.upper()
+            cvss = v2_data.get("cvssData", {})
+            score = cvss.get("baseScore", 0)
+            if score >= 7.0:
+                return "HIGH"
+            if score >= 4.0:
+                return "MEDIUM"
+            return "LOW"
+
         return "UNKNOWN"
 
     def _nvd_vendor_product(self, cve):
@@ -170,7 +236,7 @@ class ThreatScraper:
     def scrape_cisa_advisories(self):
         r = self.session.get(CISA_ADVISORIES_URL, timeout=self.timeout)
         r.raise_for_status()
-        soup = BeautifulSoup(r.text, "xml")
+        soup = BeautifulSoup(r.text, "html.parser")
         vulns = []
         for item in soup.find_all("item"):
             title = item.find("title")
@@ -179,16 +245,16 @@ class ThreatScraper:
             cve_id = ""
             if title:
                 text = title.get_text()
-                if "CVE-" in text:
-                    start = text.index("CVE-")
-                    cve_id = text[start:start + 13].strip()
+                match = CVE_RE.search(text)
+                if match:
+                    cve_id = match.group(0)
             if not cve_id:
                 desc_tag = item.find("description")
                 if desc_tag:
                     text = desc_tag.get_text()
-                    if "CVE-" in text:
-                        start = text.index("CVE-")
-                        cve_id = text[start:start + 13].strip()
+                    match = CVE_RE.search(text)
+                    if match:
+                        cve_id = match.group(0)
             if not cve_id:
                 continue
             name = title.get_text().strip() if title else ""
@@ -213,11 +279,13 @@ class ThreatScraper:
     def _find_cve(record):
         for key, value in record.items():
             if "cve" in key:
-                return value
-        # sometimes the column isn't labeled as cve but the value still is one
+                match = CVE_RE.search(value)
+                if match:
+                    return match.group(0)
         for value in record.values():
-            if str(value).startswith("CVE-"):
-                return value
+            match = CVE_RE.search(str(value))
+            if match:
+                return match.group(0)
         return ""
 
     @staticmethod
