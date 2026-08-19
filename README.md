@@ -1,4 +1,4 @@
-# TH-IGN — ThreatIntel Engine
+# TH-IGN
 
 A Python tool that scrapes CVE databases and known exploit feeds, matches them against your monitored assets, and exports structured CSV reports.
 
@@ -104,7 +104,7 @@ python3 -m pytest tests/ -v
         Save data to a CSV file
 
     [5] Exit
-        Close ThreatIntel Engine
+        Close TH-IGN
 ```
 
 Type `a`, `r`, `v`, or `t` from the main prompt for the Tools menu (Add Asset, Remove Asset, View All CVEs).
@@ -117,9 +117,9 @@ Type `a`, `r`, `v`, or `t` from the main prompt for the Tools menu (Add Asset, R
 | NVD CVE API 2.0 | `services.nvd.nist.gov/rest/json/cves/2.0` | JSON (last 7 days) |
 | CISA Advisories | `cisa.gov/cybersecurity-advisories/all.xml` | XML (HTML fallback) |
 
-## How Asset Matching Works
+## Asset Matching 
 
-1. Each monitored asset name is normalized (lowercased, whitespace standardized) and expanded using known aliases (e.g., "Chrome" matches "google chrome", "chromium").
+1. Each monitored asset name is normalized (lowercased, whitespace standardized) and expanded using known aliases (EXAMPLE :  "Chrome" matches "google chrome", "chromium").
 2. Vulnerability vendor, product, and description fields are normalized the same way.
 3. A match occurs when an asset alias is a substring of (or equals) any vulnerability field.
 4. Matched threats are assigned risk levels: only CRITICAL and HIGH severity vulns are flagged; all others are marked UNKNOWN.
