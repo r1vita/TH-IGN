@@ -3,9 +3,11 @@
 Simple Python script that scrapes CVE databases and compares to a local dabatase Assets and exports structured `.csv` reports.
 
 ## Screenshots
-![CLI Interface Overview](screenshots/ss1.png)
-![Asset Management View](screenshots/ss2.png)
-![Report Export Action](screenshots/ss3.png)
+
+| Main Interface | Asset Selection | Report Export |
+| :---: | :---: | :---: |
+| <img src="screenshots/ss1.png" width="300" alt="Main Interface"> | <img src="screenshots/ss2.png" width="300" alt="Asset Selection"> | <img src="screenshots/ss3.png" width="300" alt="Report Export"> |
+
 
 ## Step 1 - Installation & Setup
 
