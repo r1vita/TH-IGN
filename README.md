@@ -1,36 +1,37 @@
-## Install
+# TH-IGN
 
+Simple Python script that scrapes CVE databases and compares to a local dabatase ASsets and exports structured `.csv` reports.
+
+---
+
+## Screenshots
+![CLI Interface Overview](data/screenshot.png)
+
+---
+
+## Step 1 - Installation & Setup
+
+### Linux / macOS
 ```bash
-git clone https://github.com/r1vita/TH-IGN.git
+git clone https://github.com
 cd TH-IGN
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Run
+### Windows
+```powershell
+git clone https://github.com
+cd TH-IGN
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+```
 
+---
+
+## Step 2 - Run the .py file
 ```bash
 python3 main.py
-```
-
-## Monitored Assets
-
-Add/Remove Assets directly from the CLI or edit `data/monitored_assets.json` with your desired content :
-
-```json
-EXAMPLE : ["Chrome", "Apache", "Python", "Windows Server"]
-```
-
-## Project Structure
-
-```
-main.py                      # CLI interface
-models/vulnerability.py      # Vulnerability data 
-scrapers/threat_scraper.py   # CVE Scraper
-utils/storage.py             # JSON file read/write
-utils/asset_matcher.py       # Matches CVEs to assets
-utils/report_generator.py    # CSV export
-data/monitored_assets.json   # Your desired assets list
-data/vulnerabilities.json    # Stored CVE database (auto-generated)
-data/threat_report.csv       # Exported report (auto-generated)
-data/settings.json           # App settings (auto-generated)
 ```
