@@ -34,8 +34,8 @@ python3 main.py
 This opens the interactive menu:
 
 ```
-  [1] Fetch & Update Threat Feeds
-  [2] Scan Local Assets Against Threat Database
+  [1] Fetch & Update Feeds
+  [2] Scan Local Assets Against Database
   [3] Search Vulnerability by Keyword/Vendor
   [4] Export Threat Report to CSV
   [5] Exit
@@ -49,7 +49,7 @@ Type `a` from the main prompt for the Tools menu (add/remove assets, view all CV
 python3 main.py --demo
 ```
 
-Runs through all milestones and prints sample output.
+Runs and prints sample output.
 
 ### Tests
 
