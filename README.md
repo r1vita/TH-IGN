@@ -25,8 +25,8 @@ python3 -m pip install -r requirements.txt
 git clone https://github.com/r1vita/TH-IGN.git
 cd TH-IGN
 python -m venv venv
-Set-ExecutionPolicy -ExecutionPolicy Process -Scope CurrentUser
-.\venv\Scripts\activate
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
+.\venv\Scripts\Activate.ps1
 python3 -m pip install -r requirements.txt
 ```
 
