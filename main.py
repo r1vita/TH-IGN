@@ -35,8 +35,6 @@ RISK_STYLES = {
     "UNKNOWN": "bright_black",
 }
 
-SCROLL_PAGE = 25  # how many rows show at once in scrollable views
-
 
 def risk_color(level):
     return RISK_STYLES.get(str(level).upper(), "white")
@@ -184,7 +182,6 @@ def _get_suggested_dirs():
         p = home / name
         if p.exists():
             dirs.append(str(p))
-    # project own data folder coz easier
     project_data = str(Path(__file__).resolve().parent / "data")
     dirs.append(project_data)
     dirs.append(tempfile.gettempdir())
@@ -236,7 +233,7 @@ class ThreatIntelApp:
             ("search", "Last search results"),
         ]
 
-        # path picker popup (need to fix something ?)
+        # path picker popup
         self._path_popup_active = False
         self._path_popup_selected = 0
         self._path_popup_dirs = _get_suggested_dirs()
@@ -277,11 +274,15 @@ class ThreatIntelApp:
             self._set_output(Panel(heading, title=self._scroll_title))
             return
 
-        max_offset = max(0, total - SCROLL_PAGE)
+        #dynamic scale page height based on active window size
+        console_height = self.console.size.height
+        dynamic_page_size = max(5, console_height - 12)
+
+        max_offset = max(0, total - dynamic_page_size)
         self._scroll_offset = max(0, min(self._scroll_offset, max_offset))
 
         start = self._scroll_offset
-        end = min(start + SCROLL_PAGE, total)
+        end = min(start + dynamic_page_size, total)
         page_entries = entries[start:end]
 
         table = Table(
@@ -303,7 +304,7 @@ class ThreatIntelApp:
 
         pos = Text()
         pos.append(f"Showing {start + 1}-{end} of {total}", style="bold")
-        if total > SCROLL_PAGE:
+        if total > dynamic_page_size:
             pos.append("  (up/down to scroll, Esc to go back)", style=MUTED)
 
         content = Group(heading, Text(""), pos, table)
@@ -353,7 +354,7 @@ class ThreatIntelApp:
         st.append("  matched ", style=MUTED)
         st.append(str(status.matches), style="bold")
         group = Group(
-            Align.center(Text("THREATINTEL  ENGINE", style=f"bold {ACCENT}")), #could have chosen another name coz come on man
+            Align.center(Text("THREATINTEL  ENGINE", style=f"bold {ACCENT}")),
             Align.center(st),
         )
         return Panel(
@@ -399,9 +400,9 @@ class ThreatIntelApp:
     def render(self):
         layout = Layout()
         layout.split_column(
-            Layout(name="header", size=6),
-            Layout(name="body"),
-            Layout(name="footer", size=3),
+            Layout(name="header", ratio=1),
+            Layout(name="body", ratio=8),
+            Layout(name="footer", ratio=1),
         )
         layout["body"].split_row(
             Layout(self.render_menu(), name="menu", ratio=2),
@@ -425,7 +426,7 @@ class ThreatIntelApp:
             title="[bold]Error", border_style=DANGER, box=box.HEAVY,
         )
 
-    # sb-menu export 2
+    # sub-menu export
 
     def _export_sub_menu(self):
         lines = Text()
@@ -450,7 +451,6 @@ class ThreatIntelApp:
         if export_type == "full":
             db = self.storage.load("vulnerabilities.json", default=[])
             return db if isinstance(db, list) else []
-        #matched only
         db = self.storage.load("vulnerabilities.json", default=[])
         if not isinstance(db, list) or not db:
             return []
@@ -460,7 +460,7 @@ class ThreatIntelApp:
         vulns = [Vulnerability.from_dict(e) for e in db]
         return self.matcher.match(vulns, assets)
 
-    #path picker
+    # path picker
 
     def _build_path_popup(self):
         lines = Text()
@@ -557,7 +557,7 @@ class ThreatIntelApp:
             return True
         if key == "enter":
             chosen_dir = self._path_popup_dirs[self._path_popup_selected]
-            filename = self.storage.load_settings().get("export_filename", "threat_report.csv")
+            filename = "threat_report.csv"
             filepath = os.path.join(chosen_dir, filename)
             self._do_export_to_path(filepath)
             return True
@@ -832,17 +832,6 @@ class ThreatIntelApp:
         self._export_selected = 0
         self._set_output(self._export_sub_menu())
 
-    #def do_settings(self):
-     #   settings = self.storage.load_settings()
-      #  lines = Text()
-       # lines.append("Current settings:\n\n", style="bold")
-        #lines.append(f"  Export filename:  {settings.get('export_filename', 'threat_report.csv')}\n", style=ACCENT)
-        #lines.append(f"  Export directory: {settings.get('export_dir', 'data')}\n", style=ACCENT)
-        #lines.append("\nPress Enter to change export filename.", style=MUTED)
-        #self._set_output(Panel(
-         #   lines, title="[bold]Settings", border_style=ACCENT, box=box.HEAVY,
-        #))
-
     def prompt_search(self):
         self.input_prompt = "Search"
         self.input_buffer = ""
@@ -864,34 +853,6 @@ class ThreatIntelApp:
             elif isinstance(key, str) and len(key) == 1 and key.isprintable():
                 self.input_buffer += key
 
-   # def prompt_settings(self):
-    #    settings = self.storage.load_settings()
-     #   current = settings.get("export_filename", "threat_report.csv")
-      #  self.input_prompt = "Export filename"
-      #  self.input_buffer = current
-      #  self._set_output(self._idle_panel())
-      #  while True:
-       #     self._update()
-        #    key = get_key()
-         #   if key == "enter":
-          #      new_name = self.input_buffer.strip()
-           #     self.input_prompt = None
-            #    if new_name:
-             #       settings["export_filename"] = new_name
-              #      self.storage.save_settings(settings)
-               #     self._set_output(Panel(
-                #        Text(f"Export filename set to: {new_name}", style=OK),
-                 #       title="[bold]Settings", border_style=ACCENT, box=box.HEAVY,
-                  #  ))
-                #return
-            #if key in ("esc", "ctrl-c"):
-             #   self.input_prompt = None
-              #  return
-            #if key == "backspace":
-             #   self.input_buffer = self.input_buffer[:-1]
-            #elif isinstance(key, str) and len(key) == 1 and key.isprintable():
-             #   self.input_buffer += key
-
     def activate(self):
         item = self.menu_items[self.selected]
         if item.key == "fetch":
@@ -908,9 +869,6 @@ class ThreatIntelApp:
             self.do_del_asset()
         elif item.key == "export":
             self.do_export()
-        elif item.key == "settings":
-            self.do_settings()
-            self.prompt_settings()
         elif item.key == "quit":
             self.quit_requested = True
 
@@ -955,7 +913,6 @@ class ThreatIntelApp:
                     key = get_key()
                     if key == "ctrl-c":
                         break
-                    #q only works in menu state, not when browsing results etc
                     if key == "q" and self.input_prompt is None and not self._export_active and not self._path_popup_active and not getattr(self, "_scroll_entries", None):
                         break
 
@@ -1058,7 +1015,7 @@ class ThreatIntelApp:
                             self.console.print(f"    {i+1}. {d}")
                         loc = input(f"  Choose # or type path [{default_path}]> ").strip()
                         if loc.isdigit() and 1 <= int(loc) <= len(dirs):
-                            filename = self.storage.load_settings().get("export_filename", "threat_report.csv")
+                            filename = "threat_report.csv"
                             filepath = os.path.join(dirs[int(loc) - 1], filename)
                         elif loc:
                             filepath = loc
@@ -1074,14 +1031,6 @@ class ThreatIntelApp:
                             self.console.print(f"  Exported {len(rows)} records to {path}", style=OK)
                         except Exception as exc:
                             self.console.print(f"  Export failed: {exc}", style=DANGER)
-            elif item.key == "settings":
-                self.do_settings()
-                new_name = input("  Export filename> ").strip()
-                if new_name:
-                    settings = self.storage.load_settings()
-                    settings["export_filename"] = new_name
-                    self.storage.save_settings(settings)
-                    self.console.print(f"  Export filename set to: {new_name}", style=OK)
             elif item.key == "quit":
                 self.quit_requested = True
             self.console.print(self.output)
