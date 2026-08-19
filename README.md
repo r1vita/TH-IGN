@@ -1,9 +1,11 @@
 # TH-IGN
 
-Simple Python script that scrapes CVE databases and compares to a local dabatase ASsets and exports structured `.csv` reports.
+Simple Python script that scrapes CVE databases and compares to a local dabatase Assets and exports structured `.csv` reports.
 
 ## Screenshots
-![CLI Interface Overview](data/screenshot.png)
+![CLI Interface Overview](screenshots/ss1.png)
+![Asset Management View](screenshots/ss2.png)
+![Report Export Action](screenshots/ss3.png)
 
 ## Step 1 - Installation & Setup
 
