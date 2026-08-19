@@ -9,3 +9,8 @@ ENV/
 .vscode/
 .idea/
 *.csv
+data/vulnerabilities.json
+data/matched_vulnerabilities.json
+data/settings.json
+data/demo_report.csv
+data/*.tmp
