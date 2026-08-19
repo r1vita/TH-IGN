@@ -1,5 +1,61 @@
 [
   {
+    "cve_id": "CVE-2026-33824",
+    "vendor": "Microsoft",
+    "product": "Internet Key Exchange (IKE) Service Extensions",
+    "vulnerability_name": "Microsoft Internet Key Exchange (IKE) Service Extensions Double Free Vulnerability",
+    "date_added": "2026-08-18",
+    "severity": "CRITICAL"
+  },
+  {
+    "cve_id": "CVE-2026-59310",
+    "vendor": "Broadcom",
+    "product": "VMware vCenter",
+    "vulnerability_name": "Broadcom VMware vCenter Path Traversal Vulnerability",
+    "date_added": "2026-08-18",
+    "severity": "CRITICAL"
+  },
+  {
+    "cve_id": "CVE-2026-55040",
+    "vendor": "Microsoft",
+    "product": "SharePoint",
+    "vulnerability_name": "Microsoft SharePoint Weak Authentication Vulnerability",
+    "date_added": "2026-08-18",
+    "severity": "CRITICAL"
+  },
+  {
+    "cve_id": "CVE-2026-65400",
+    "vendor": "Apple",
+    "product": "macOS",
+    "vulnerability_name": "Apple macOS Improper Authentication Vulnerability",
+    "date_added": "2026-08-18",
+    "severity": "CRITICAL"
+  },
+  {
+    "cve_id": "CVE-2026-5908",
+    "vendor": "",
+    "product": "",
+    "vulnerability_name": "Siemens Simcenter Nastran",
+    "date_added": "2026-08-18",
+    "severity": "HIGH"
+  },
+  {
+    "cve_id": "CVE-2026-5567",
+    "vendor": "",
+    "product": "",
+    "vulnerability_name": "CISA Malcolm",
+    "date_added": "2026-08-18",
+    "severity": "HIGH"
+  },
+  {
+    "cve_id": "CVE-2026-3382",
+    "vendor": "",
+    "product": "",
+    "vulnerability_name": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
+    "date_added": "2026-08-18",
+    "severity": "HIGH"
+  },
+  {
     "cve_id": "CVE-2025-62593",
     "vendor": "Ray-Project",
     "product": "Ray",

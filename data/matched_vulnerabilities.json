@@ -8,7 +8,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-15999",
@@ -19,7 +19,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-21166",
@@ -30,7 +30,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-16017",
@@ -41,7 +41,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-37976",
@@ -52,7 +52,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-16009",
@@ -63,7 +63,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-30632",
@@ -74,7 +74,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-16013",
@@ -85,7 +85,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-30633",
@@ -96,7 +96,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-21148",
@@ -107,7 +107,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-37973",
@@ -118,7 +118,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-30551",
@@ -129,7 +129,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-37975",
@@ -140,7 +140,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-6418",
@@ -151,7 +151,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-30554",
@@ -162,7 +162,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-21206",
@@ -173,7 +173,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-38000",
@@ -184,7 +184,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-38003",
@@ -195,7 +195,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-21224",
@@ -206,7 +206,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-21193",
@@ -217,7 +217,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-21220",
@@ -228,7 +228,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-30563",
@@ -239,7 +239,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-1812",
@@ -250,7 +250,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-38647",
@@ -261,7 +261,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-0167",
@@ -272,7 +272,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0878",
@@ -283,7 +283,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-31955",
@@ -294,7 +294,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-1647",
@@ -305,7 +305,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-33739",
@@ -316,7 +316,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-0185",
@@ -327,7 +327,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0683",
@@ -338,7 +338,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-17087",
@@ -349,7 +349,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-33742",
@@ -360,7 +360,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-31199",
@@ -371,7 +371,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-33771",
@@ -382,7 +382,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-31956",
@@ -393,7 +393,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-31201",
@@ -404,7 +404,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-31979",
@@ -415,7 +415,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0938",
@@ -426,7 +426,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-17144",
@@ -437,7 +437,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0986",
@@ -448,7 +448,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-1020",
@@ -459,7 +459,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-38645",
@@ -470,7 +470,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-34523",
@@ -481,7 +481,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-7269",
@@ -492,7 +492,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-36948",
@@ -503,7 +503,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-38649",
@@ -514,7 +514,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0688",
@@ -525,7 +525,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0143",
@@ -536,7 +536,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-7255",
@@ -547,7 +547,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0708",
@@ -558,7 +558,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-34473",
@@ -569,7 +569,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-1464",
@@ -580,7 +580,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-1732",
@@ -591,7 +591,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-34527",
@@ -602,7 +602,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-31207",
@@ -613,7 +613,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0803",
@@ -624,7 +624,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-1040",
@@ -635,7 +635,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-28310",
@@ -646,7 +646,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-1350",
@@ -657,7 +657,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-26411",
@@ -668,7 +668,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0859",
@@ -679,7 +679,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-40444",
@@ -690,7 +690,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-8759",
@@ -701,7 +701,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8653",
@@ -712,7 +712,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0797",
@@ -723,7 +723,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-36942",
@@ -734,7 +734,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1215",
@@ -745,7 +745,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-0798",
@@ -756,7 +756,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-0802",
@@ -767,7 +767,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-0158",
@@ -778,7 +778,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-1641",
@@ -789,7 +789,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-27085",
@@ -800,7 +800,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0541",
@@ -811,7 +811,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-11882",
@@ -822,7 +822,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0674",
@@ -833,7 +833,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-27059",
@@ -844,7 +844,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1367",
@@ -855,7 +855,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0199",
@@ -866,7 +866,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-1380",
@@ -877,7 +877,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1429",
@@ -888,7 +888,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-11774",
@@ -899,7 +899,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0968",
@@ -910,7 +910,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-1472",
@@ -921,7 +921,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-26855",
@@ -932,7 +932,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-26858",
@@ -943,7 +943,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-27065",
@@ -954,7 +954,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-1054",
@@ -965,7 +965,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-1675",
@@ -976,7 +976,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-34448",
@@ -987,7 +987,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0601",
@@ -998,7 +998,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0604",
@@ -1009,7 +1009,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0646",
@@ -1020,7 +1020,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0808",
@@ -1031,7 +1031,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-26857",
@@ -1042,7 +1042,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-1147",
@@ -1053,7 +1053,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1214",
@@ -1064,7 +1064,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-3235",
@@ -1075,7 +1075,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0863",
@@ -1086,7 +1086,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-36955",
@@ -1097,7 +1097,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-38648",
@@ -1108,7 +1108,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-2555",
@@ -1119,7 +1119,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-3152",
@@ -1130,7 +1130,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-14871",
@@ -1141,7 +1141,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-4852",
@@ -1152,7 +1152,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-14750",
@@ -1163,7 +1163,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-14882",
@@ -1174,7 +1174,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-14883",
@@ -1185,7 +1185,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-40449",
@@ -1196,7 +1196,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-42321",
@@ -1207,7 +1207,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-42292",
@@ -1218,7 +1218,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-43890",
@@ -1229,7 +1229,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-4102",
@@ -1240,7 +1240,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-6572",
@@ -1251,7 +1251,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1458",
@@ -1262,7 +1262,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-3900",
@@ -1273,7 +1273,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-2725",
@@ -1284,7 +1284,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-33766",
@@ -1295,7 +1295,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-14864",
@@ -1306,7 +1306,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8453",
@@ -1317,7 +1317,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0787",
@@ -1328,7 +1328,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-1776",
@@ -1339,7 +1339,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-21882",
@@ -1350,7 +1350,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-36934",
@@ -1361,7 +1361,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0796",
@@ -1372,7 +1372,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-8464",
@@ -1383,7 +1383,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-10271",
@@ -1394,7 +1394,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0263",
@@ -1405,7 +1405,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0262",
@@ -1416,7 +1416,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0145",
@@ -1427,7 +1427,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0144",
@@ -1438,7 +1438,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-1635",
@@ -1449,7 +1449,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-0609",
@@ -1460,7 +1460,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0752",
@@ -1471,7 +1471,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8174",
@@ -1482,7 +1482,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-1761",
@@ -1493,7 +1493,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-3906",
@@ -1504,7 +1504,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-8570",
@@ -1515,7 +1515,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0222",
@@ -1526,7 +1526,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-6352",
@@ -1537,7 +1537,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-41379",
@@ -1548,7 +1548,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1297",
@@ -1559,7 +1559,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8581",
@@ -1570,7 +1570,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-8540",
@@ -1581,7 +1581,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-11826",
@@ -1592,7 +1592,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0261",
@@ -1603,7 +1603,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0001",
@@ -1614,7 +1614,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-7262",
@@ -1625,7 +1625,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-7193",
@@ -1636,7 +1636,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-0099",
@@ -1647,7 +1647,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-4902",
@@ -1658,7 +1658,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-2590",
@@ -1669,7 +1669,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-2545",
@@ -1680,7 +1680,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-2424",
@@ -1691,7 +1691,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-2387",
@@ -1702,7 +1702,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-1701",
@@ -1713,7 +1713,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-1642",
@@ -1724,7 +1724,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-4114",
@@ -1735,7 +1735,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-5065",
@@ -1746,7 +1746,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-3897",
@@ -1757,7 +1757,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-1347",
@@ -1768,7 +1768,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-4681",
@@ -1779,7 +1779,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-1856",
@@ -1790,7 +1790,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-1723",
@@ -1801,7 +1801,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-0507",
@@ -1812,7 +1812,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2011-3544",
@@ -1823,7 +1823,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2011-1889",
@@ -1834,7 +1834,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2010-3333",
@@ -1845,7 +1845,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2010-0232",
@@ -1856,7 +1856,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2009-3129",
@@ -1867,7 +1867,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2009-1123",
@@ -1878,7 +1878,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2008-3431",
@@ -1889,7 +1889,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2004-0210",
@@ -1900,7 +1900,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2002-0367",
@@ -1911,7 +1911,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1405",
@@ -1922,7 +1922,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1322",
@@ -1933,7 +1933,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1315",
@@ -1944,7 +1944,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1253",
@@ -1955,7 +1955,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1132",
@@ -1966,7 +1966,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1129",
@@ -1977,7 +1977,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1069",
@@ -1988,7 +1988,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1064",
@@ -1999,7 +1999,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0841",
@@ -2010,7 +2010,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0543",
@@ -2021,7 +2021,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8120",
@@ -2032,7 +2032,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0101",
@@ -2043,7 +2043,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-3309",
@@ -2054,7 +2054,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-2546",
@@ -2065,7 +2065,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-21999",
@@ -2076,7 +2076,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-2616",
@@ -2087,7 +2087,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0903",
@@ -2098,7 +2098,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8414",
@@ -2109,7 +2109,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8373",
@@ -2120,7 +2120,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0146",
@@ -2131,7 +2131,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-6332",
@@ -2142,7 +2142,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-6324",
@@ -2153,7 +2153,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-1096",
@@ -2164,7 +2164,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-38646",
@@ -2175,7 +2175,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-34486",
@@ -2186,7 +2186,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8440",
@@ -2197,7 +2197,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8406",
@@ -2208,7 +2208,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8405",
@@ -2219,7 +2219,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0213",
@@ -2230,7 +2230,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0059",
@@ -2241,7 +2241,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0037",
@@ -2252,7 +2252,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-7201",
@@ -2263,7 +2263,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-7200",
@@ -2274,7 +2274,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-0189",
@@ -2285,7 +2285,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-0151",
@@ -2296,7 +2296,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-0040",
@@ -2307,7 +2307,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-2426",
@@ -2318,7 +2318,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-2419",
@@ -2329,7 +2329,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-1770",
@@ -2340,7 +2340,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-3660",
@@ -2351,7 +2351,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-2551",
@@ -2362,7 +2362,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-2465",
@@ -2373,7 +2373,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-5076",
@@ -2384,7 +2384,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-2539",
@@ -2395,7 +2395,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-0518",
@@ -2406,7 +2406,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2011-2005",
@@ -2417,7 +2417,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2010-4398",
@@ -2428,7 +2428,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-34484",
@@ -2439,7 +2439,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-31166",
@@ -2450,7 +2450,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0148",
@@ -2461,7 +2461,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-42287",
@@ -2472,7 +2472,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-42278",
@@ -2483,7 +2483,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-39793",
@@ -2494,7 +2494,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-24521",
@@ -2505,7 +2505,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-2502",
@@ -2516,7 +2516,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-1364",
@@ -2527,7 +2527,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-22718",
@@ -2538,7 +2538,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-26904",
@@ -2549,7 +2549,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-21919",
@@ -2560,7 +2560,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-41357",
@@ -2571,7 +2571,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-40450",
@@ -2582,7 +2582,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-4113",
@@ -2593,7 +2593,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-0322",
@@ -2604,7 +2604,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-1027",
@@ -2615,7 +2615,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0638",
@@ -2626,7 +2626,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0676",
@@ -2637,7 +2637,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-5786",
@@ -2648,7 +2648,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0703",
@@ -2659,7 +2659,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-0880",
@@ -2670,7 +2670,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-13720",
@@ -2681,7 +2681,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1385",
@@ -2692,7 +2692,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1130",
@@ -2703,7 +2703,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8589",
@@ -2714,7 +2714,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8611",
@@ -2725,7 +2725,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0147",
@@ -2736,7 +2736,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0022",
@@ -2747,7 +2747,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0005",
@@ -2758,7 +2758,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0149",
@@ -2769,7 +2769,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-0210",
@@ -2780,7 +2780,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-8543",
@@ -2791,7 +2791,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-0162",
@@ -2802,7 +2802,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-3351",
@@ -2813,7 +2813,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-3298",
@@ -2824,7 +2824,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-3010",
@@ -2835,7 +2835,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-3393",
@@ -2846,7 +2846,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-7256",
@@ -2857,7 +2857,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-0034",
@@ -2868,7 +2868,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-0016",
@@ -2879,7 +2879,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-0071",
@@ -2890,7 +2890,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-2360",
@@ -2901,7 +2901,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-2425",
@@ -2912,7 +2912,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-1769",
@@ -2923,7 +2923,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-6175",
@@ -2934,7 +2934,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2015-1671",
@@ -2945,7 +2945,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-4148",
@@ -2956,7 +2956,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-4123",
@@ -2967,7 +2967,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-2817",
@@ -2978,7 +2978,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2014-4077",
@@ -2989,7 +2989,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-7331",
@@ -3000,7 +3000,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-3896",
@@ -3011,7 +3011,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-2423",
@@ -3022,7 +3022,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-0431",
@@ -3033,7 +3033,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-0422",
@@ -3044,7 +3044,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-0074",
@@ -3055,7 +3055,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-1710",
@@ -3066,7 +3066,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2010-0840",
@@ -3077,7 +3077,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-5825",
@@ -3088,7 +3088,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-6065",
@@ -3099,7 +3099,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-17480",
@@ -3110,7 +3110,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-17463",
@@ -3121,7 +3121,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-5070",
@@ -3132,7 +3132,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-5030",
@@ -3143,7 +3143,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-5198",
@@ -3154,7 +3154,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-1646",
@@ -3165,7 +3165,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-1331",
@@ -3176,7 +3176,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-4969",
@@ -3187,7 +3187,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-1889",
@@ -3198,7 +3198,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-0151",
@@ -3209,7 +3209,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2010-2572",
@@ -3220,7 +3220,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2009-0563",
@@ -3231,7 +3231,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2009-0557",
@@ -3242,7 +3242,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2006-2492",
@@ -3253,7 +3253,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-30190",
@@ -3264,7 +3264,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-30533",
@@ -3275,7 +3275,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-26925",
@@ -3286,7 +3286,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-22047",
@@ -3297,7 +3297,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-34713",
@@ -3308,7 +3308,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-2856",
@@ -3319,7 +3319,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-26923",
@@ -3330,7 +3330,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-21971",
@@ -3341,7 +3341,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-3075",
@@ -3352,7 +3352,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-2628",
@@ -3363,7 +3363,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-37969",
@@ -3374,7 +3374,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2010-2568",
@@ -3385,7 +3385,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-41082",
@@ -3396,7 +3396,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-41040",
@@ -3407,7 +3407,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-41033",
@@ -3418,7 +3418,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-3723",
@@ -3429,7 +3429,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-41091",
@@ -3440,7 +3440,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-41073",
@@ -3451,7 +3451,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-41125",
@@ -3462,7 +3462,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-41128",
@@ -3473,7 +3473,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-41049",
@@ -3484,7 +3484,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-35587",
@@ -3495,7 +3495,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-4135",
@@ -3506,7 +3506,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-4262",
@@ -3517,7 +3517,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-44698",
@@ -3528,7 +3528,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-41080",
@@ -3539,7 +3539,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-21674",
@@ -3550,7 +3550,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-21587",
@@ -3561,7 +3561,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-21715",
@@ -3572,7 +3572,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-23376",
@@ -3583,7 +3583,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-21823",
@@ -3594,7 +3594,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-23397",
@@ -3605,7 +3605,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-24880",
@@ -3616,7 +3616,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-3163",
@@ -3627,7 +3627,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-3038",
@@ -3638,7 +3638,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2019-1388",
@@ -3649,7 +3649,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-28252",
@@ -3660,7 +3660,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-2033",
@@ -3671,7 +3671,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-2136",
@@ -3682,7 +3682,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-21839",
@@ -3693,7 +3693,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-29336",
@@ -3704,7 +3704,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-3427",
@@ -3715,7 +3715,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-3079",
@@ -3726,7 +3726,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2016-0165",
@@ -3737,7 +3737,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-32046",
@@ -3748,7 +3748,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-32049",
@@ -3759,7 +3759,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-35311",
@@ -3770,7 +3770,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-36874",
@@ -3781,7 +3781,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-36884",
@@ -3792,7 +3792,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-38180",
@@ -3803,7 +3803,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-36761",
@@ -3814,7 +3814,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-36802",
@@ -3825,7 +3825,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-4863",
@@ -3836,7 +3836,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-5217",
@@ -3847,7 +3847,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-28229",
@@ -3858,7 +3858,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-41763",
@@ -3869,7 +3869,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-36563",
@@ -3880,7 +3880,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-36033",
@@ -3891,7 +3891,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-36025",
@@ -3902,7 +3902,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-36036",
@@ -3913,7 +3913,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-36584",
@@ -3924,7 +3924,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-2551",
@@ -3935,7 +3935,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-6345",
@@ -3946,7 +3946,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-7024",
@@ -3957,7 +3957,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-29357",
@@ -3968,7 +3968,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-0519",
@@ -3979,7 +3979,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-4762",
@@ -3990,7 +3990,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-21412",
@@ -4001,7 +4001,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-21351",
@@ -4012,7 +4012,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-21410",
@@ -4023,7 +4023,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-29360",
@@ -4034,7 +4034,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-21338",
@@ -4045,7 +4045,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-24955",
@@ -4056,7 +4056,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-38028",
@@ -4067,7 +4067,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-29988",
@@ -4078,7 +4078,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-4671",
@@ -4089,7 +4089,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-30040",
@@ -4100,7 +4100,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-30051",
@@ -4111,7 +4111,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-4761",
@@ -4122,7 +4122,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-4947",
@@ -4133,7 +4133,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-5274",
@@ -4144,7 +4144,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2017-3506",
@@ -4155,7 +4155,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-26169",
@@ -4166,7 +4166,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-38080",
@@ -4177,7 +4177,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-38112",
@@ -4188,7 +4188,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-4792",
@@ -4199,7 +4199,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-0824",
@@ -4210,7 +4210,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-38107",
@@ -4221,7 +4221,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-38106",
@@ -4232,7 +4232,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-38193",
@@ -4243,7 +4243,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-38213",
@@ -4254,7 +4254,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-38178",
@@ -4265,7 +4265,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-38189",
@@ -4276,7 +4276,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-31196",
@@ -4287,7 +4287,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-7971",
@@ -4298,7 +4298,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-7965",
@@ -4309,7 +4309,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-38217",
@@ -4320,7 +4320,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-38014",
@@ -4331,7 +4331,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-38226",
@@ -4342,7 +4342,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-43461",
@@ -4353,7 +4353,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-14644",
@@ -4364,7 +4364,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2022-21445",
@@ -4375,7 +4375,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-0618",
@@ -4386,7 +4386,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-43573",
@@ -4397,7 +4397,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-43572",
@@ -4408,7 +4408,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-30088",
@@ -4419,7 +4419,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-38094",
@@ -4430,7 +4430,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-43451",
@@ -4441,7 +4441,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-49039",
@@ -4452,7 +4452,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-21287",
@@ -4463,7 +4463,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-49138",
@@ -4474,7 +4474,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-35250",
@@ -4485,7 +4485,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2020-2883",
@@ -4496,7 +4496,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-21335",
@@ -4507,7 +4507,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-21334",
@@ -4518,7 +4518,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-21333",
@@ -4529,7 +4529,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-29059",
@@ -4540,7 +4540,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-21413",
@@ -4551,7 +4551,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-21418",
@@ -4562,7 +4562,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-21391",
@@ -4573,7 +4573,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-24989",
@@ -4584,7 +4584,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-20953",
@@ -4595,7 +4595,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-49035",
@@ -4606,7 +4606,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2018-8639",
@@ -4617,7 +4617,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-24993",
@@ -4628,7 +4628,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-24991",
@@ -4639,7 +4639,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-24985",
@@ -4650,7 +4650,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-24984",
@@ -4661,7 +4661,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-24983",
@@ -4672,7 +4672,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-26633",
@@ -4683,7 +4683,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-2783",
@@ -4694,7 +4694,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-29824",
@@ -4705,7 +4705,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-24054",
@@ -4716,7 +4716,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-32709",
@@ -4727,7 +4727,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-30397",
@@ -4738,7 +4738,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-32706",
@@ -4749,7 +4749,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-32701",
@@ -4760,7 +4760,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-30400",
@@ -4771,7 +4771,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-5419",
@@ -4782,7 +4782,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-33053",
@@ -4793,7 +4793,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-6554",
@@ -4804,7 +4804,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-53770",
@@ -4815,7 +4815,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-6558",
@@ -4826,7 +4826,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-49704",
@@ -4837,7 +4837,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-49706",
@@ -4848,7 +4848,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2007-0671",
@@ -4859,7 +4859,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-3893",
@@ -4870,7 +4870,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-10585",
@@ -4881,7 +4881,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2010-3962",
@@ -4892,7 +4892,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2021-43226",
@@ -4903,7 +4903,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2013-3918",
@@ -4914,7 +4914,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2011-3402",
@@ -4925,7 +4925,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-61882",
@@ -4936,7 +4936,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-24990",
@@ -4947,7 +4947,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-59230",
@@ -4958,7 +4958,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-33073",
@@ -4969,7 +4969,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-61884",
@@ -4980,7 +4980,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-59287",
@@ -4991,7 +4991,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-62215",
@@ -5002,7 +5002,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-13223",
@@ -5013,7 +5013,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-61757",
@@ -5024,7 +5024,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-62221",
@@ -5035,7 +5035,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-14174",
@@ -5046,7 +5046,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2009-0556",
@@ -5057,7 +5057,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-20805",
@@ -5068,7 +5068,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-21509",
@@ -5079,7 +5079,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-21513",
@@ -5090,7 +5090,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-21525",
@@ -5101,7 +5101,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-21510",
@@ -5112,7 +5112,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-21533",
@@ -5123,7 +5123,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-21519",
@@ -5134,7 +5134,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-21514",
@@ -5145,7 +5145,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-43468",
@@ -5156,7 +5156,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2008-0015",
@@ -5167,7 +5167,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-2441",
@@ -5178,7 +5178,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-3910",
@@ -5189,7 +5189,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-3909",
@@ -5200,7 +5200,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-20963",
@@ -5211,7 +5211,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-5281",
@@ -5222,7 +5222,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2012-1854",
@@ -5233,7 +5233,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2025-60710",
@@ -5244,7 +5244,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-21529",
@@ -5255,7 +5255,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2023-36424",
@@ -5266,7 +5266,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2009-0238",
@@ -5277,7 +5277,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-32201",
@@ -5288,7 +5288,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-33825",
@@ -5299,7 +5299,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-32202",
@@ -5310,7 +5310,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-42897",
@@ -5321,7 +5321,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2008-4250",
@@ -5332,7 +5332,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2009-1537",
@@ -5343,7 +5343,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2010-0249",
@@ -5354,7 +5354,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2010-0806",
@@ -5365,7 +5365,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-41091",
@@ -5376,7 +5376,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-45498",
@@ -5387,7 +5387,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2024-21182",
@@ -5398,7 +5398,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-11645",
@@ -5409,7 +5409,7 @@
     "severity": "CRITICAL",
     "asset": "Google",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-35273",
@@ -5420,7 +5420,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-45659",
@@ -5431,7 +5431,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-56155",
@@ -5442,7 +5442,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-56164",
@@ -5453,7 +5453,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-46817",
@@ -5464,7 +5464,7 @@
     "severity": "CRITICAL",
     "asset": "Oracle",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-58644",
@@ -5475,7 +5475,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-50522",
@@ -5486,7 +5486,7 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-2026-68820",
@@ -5497,7 +5497,29 @@
     "severity": "CRITICAL",
     "asset": "Microsoft",
     "risk_level": "CRITICAL",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
+  },
+  {
+    "cve_id": "CVE-2026-33824",
+    "vendor": "Microsoft",
+    "product": "Internet Key Exchange (IKE) Service Extensions",
+    "vulnerability_name": "Microsoft Internet Key Exchange (IKE) Service Extensions Double Free Vulnerability",
+    "date_added": "2026-08-18",
+    "severity": "CRITICAL",
+    "asset": "Microsoft",
+    "risk_level": "CRITICAL",
+    "date_detected": "2026-08-19"
+  },
+  {
+    "cve_id": "CVE-2026-55040",
+    "vendor": "Microsoft",
+    "product": "SharePoint",
+    "vulnerability_name": "Microsoft SharePoint Weak Authentication Vulnerability",
+    "date_added": "2026-08-18",
+    "severity": "CRITICAL",
+    "asset": "Microsoft",
+    "risk_level": "CRITICAL",
+    "date_detected": "2026-08-19"
   },
   {
     "cve_id": "CVE-1999-0077",
@@ -5508,6 +5530,6 @@
     "severity": "MEDIUM",
     "asset": "Microsoft",
     "risk_level": "MEDIUM",
-    "date_detected": "2026-08-18"
+    "date_detected": "2026-08-19"
   }
 ]
