@@ -17,9 +17,9 @@ TH-IGN/
 ├── models/
 │   └── vulnerability.py        # Vulnerability data class
 ├── scrapers/
-│   └── threat_scraper.py       # CVE feed scrapers (CISA KEV, NVD, CISA Advisories)
+│   └── threat_scraper.py       # CVE feed scrapers (CISA KEV, NVD, CISA)
 ├── utils/
-│   ├── asset_matcher.py        # Asset-to-vulnerability matching logic
+│   ├── asset_matcher.py        # Asset to vulnerability logic 
 │   ├── report_generator.py     # CSV report generation
 │   └── storage.py              # JSON file storage and duplicate handling
 ├── tests/
@@ -39,9 +39,9 @@ TH-IGN/
 - **models/vulnerability.py** — `Vulnerability` class with severity normalization, CVE ID validation, and serialization.
 - **scrapers/threat_scraper.py** — `ThreatScraper` fetches from CISA KEV, NVD (recent 7 days), and CISA Advisories. Reports per-source success/failure.
 - **utils/asset_matcher.py** — `AssetMatcher` normalizes names (spaces, hyphens, underscores, aliases) and matches vulnerabilities to monitored assets. Risk is set to HIGH or CRITICAL only.
-- **utils/storage.py** — `Storage` handles JSON read/write with atomic saves, corruption recovery, and duplicate-prevention during merge.
+- **utils/storage.py** — `Storage` handles JSON read/write with saves, corruption recovery, aswell as duplicate prevention.
 - **utils/report_generator.py** — `ReportGenerator` exports matched, full, or search results to CSV with proper headers.
-- **main.py** — Interactive CLI with menu `[1]`–`[5]` and a `--demo` mode for milestone demonstrations.
+- **main.py** — Interactive CLI with menu `[1]`–`[5]` and a `--demo` mode for demonstrations.
 
 ## Step 1 — Installation & Setup
 
@@ -74,7 +74,7 @@ python -m pip install -r requirements.txt
 python3 main.py
 ```
 
-### Milestone Demonstrations
+### Demonstrations
 
 ```bash
 python3 main.py --demo
@@ -124,7 +124,7 @@ Type `a`, `r`, `v`, or `t` from the main prompt for the Tools menu (Add Asset, R
 3. A match occurs when an asset alias is a substring of (or equals) any vulnerability field.
 4. Matched threats are assigned risk levels: only CRITICAL and HIGH severity vulns are flagged; all others are marked UNKNOWN.
 
-## How Risk Levels Are Determined
+## Risk Levels 
 
 Risk comes from the vulnerability's original severity as reported by the source (CISA KEV estimate or NVD CVSS score). Matched threats inherit the severity but risk is capped: only CRITICAL and HIGH severities are reported as risks. MEDIUM, LOW, and UNKNOWN severities are not flagged as active risks.
 
