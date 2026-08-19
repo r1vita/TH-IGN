@@ -1,17 +1,5 @@
 import os
 import sys
-import tempfile
-from dataclasses import dataclass
-from pathlib import Path
-
-from rich import box
-from rich.align import Align
-from rich.console import Console, Group
-from rich.layout import Layout
-from rich.live import Live
-from rich.panel import Panel
-from rich.table import Table
-from rich.text import Text
 
 from models.vulnerability import Vulnerability
 from scrapers.threat_scraper import ThreatScraper
@@ -19,1036 +7,468 @@ from utils.asset_matcher import AssetMatcher
 from utils.report_generator import ReportGenerator
 from utils.storage import Storage
 
-VERSION = "1.0"
+VERSION = "2.0"
 
-ACCENT = "cyan"
-OK = "green"
-WARN = "yellow"
-DANGER = "red"
-MUTED = "bright_black"
-
-RISK_STYLES = {
-    "CRITICAL": "red",
-    "HIGH": "yellow",
-    "MEDIUM": "cyan",
-    "LOW": "green",
-    "UNKNOWN": "bright_black",
-}
+BOLD = "\033[1m"
+DIM = "\033[2m"
+RED = "\033[91m"
+GREEN = "\033[92m"
+YELLOW = "\033[93m"
+CYAN = "\033[96m"
+RESET = "\033[0m"
+REVERSE = "\033[7m"
 
 
-def risk_color(level):
-    return RISK_STYLES.get(str(level).upper(), "white")
+def colored(text, color):
+    return f"{color}{text}{RESET}"
 
 
-def _truncate(text, max_len):
-    text = str(text)
-    if len(text) <= max_len:
-        return text
-    return text[: max_len - 3] + "..."
+def risk_style(level):
+    styles = {
+        "CRITICAL": RED,
+        "HIGH": YELLOW,
+        "MEDIUM": CYAN,
+        "LOW": GREEN,
+        "UNKNOWN": DIM,
+    }
+    return styles.get(str(level).upper(), "")
 
 
-# terminal stuff
+def print_header(status):
+    print()
+    print(colored("=" * 58, CYAN))
+    print(colored("         THREATINTEL ENGINE  v" + VERSION, BOLD + CYAN))
+    print(colored("=" * 58, CYAN))
+    print(f"  db: {BOLD}{status['database']}{RESET}   "
+          f"assets: {BOLD}{status['assets']}{RESET}   "
+          f"matched: {BOLD}{status['matches']}{RESET}")
+    print(colored("-" * 58, CYAN))
 
-_SAVED_TERM_ATTRS = None
+
+def print_menu(selected=None):
+    items = [
+        ("1", "Fetch & Update Threat Feeds", "Download latest CVE data"),
+        ("2", "Scan Local Assets Against Threat Database", "Match assets against known CVEs"),
+        ("3", "Search Vulnerability by Keyword/Vendor", "Find vulnerabilities"),
+        ("4", "Export Threat Report to CSV", "Save data to a CSV file"),
+        ("5", "Exit", "Close ThreatIntel Engine"),
+    ]
+    print()
+    print(colored("  Main Menu", BOLD))
+    print()
+    for num, label, desc in items:
+        marker = colored(">", CYAN) if num == selected else " "
+        style = BOLD if num == selected else ""
+        print(f"  {marker} {style}[{num}]{RESET} {label}")
+        print(f"      {colored(desc, DIM)}")
+    print()
+    print(colored("-" * 58, CYAN))
 
 
-def enter_raw_mode():
-    global _SAVED_TERM_ATTRS
-    if os.name == "nt":
-        # Windows doesn't need raw terminal setup for msvcrt
+def print_extras_menu():
+    items = [
+        ("a", "Add Asset", "Add asset to monitored list"),
+        ("r", "Remove Asset", "Remove asset from monitored list"),
+        ("v", "View All CVEs", "Browse every CVE in database"),
+        ("b", "Back", "Return to main menu"),
+    ]
+    print()
+    print(colored("  Tools Menu", BOLD))
+    print()
+    for num, label, desc in items:
+        print(f"    [{num}] {label}")
+        print(f"        {colored(desc, DIM)}")
+    print()
+
+
+def read_status(matcher, storage):
+    db = storage.load("vulnerabilities.json", default=[])
+    matches = storage.load("matched_vulnerabilities.json", default=[])
+    return {
+        "database": len(db) if isinstance(db, list) else 0,
+        "assets": len(matcher.load_assets()),
+        "matches": len(matches) if isinstance(matches, list) else 0,
+    }
+
+
+def do_fetch(scraper, storage):
+    print()
+    print(colored("  Downloading threat data...", YELLOW))
+    print()
+    vulns, results = scraper.scrape_all()
+
+    for r in results:
+        if r.success:
+            print(colored(f"  [OK]    {r.source}: {len(r.vulns)} vulnerabilities", GREEN))
+        else:
+            print(colored(f"  [FAIL]  {r.source}: {r.error}", RED))
+
+    merge = storage.merge_vulnerabilities(vulns)
+    added = merge["added"]
+    total = merge["total"]
+    duplicates = merge["duplicates"]
+
+    all_fail = all(not r.success for r in results)
+
+    print()
+    if all_fail:
+        print(colored("  FAILED: All threat sources unreachable. No data downloaded.", RED))
+        print(colored("  Check your internet connection and try again.", DIM))
+    elif added > 0:
+        print(colored(f"  {len(vulns)} vulnerabilities fetched ({added} new, {duplicates} duplicates)", GREEN))
+        print(colored(f"  Database: {total} total entries", BOLD))
+    else:
+        print(colored(f"  {len(vulns)} vulnerabilities fetched, all duplicates", YELLOW))
+        print(colored(f"  Database: {total} total entries (already up to date)", BOLD))
+    print()
+
+
+def do_scan(matcher, storage):
+    assets = matcher.load_assets()
+    if not assets:
+        print(colored("  No assets found. Add assets via the Tools menu.", RED))
         return
-    import termios, tty
-    fd = sys.stdin.fileno()
-    if _SAVED_TERM_ATTRS is None:
-        _SAVED_TERM_ATTRS = termios.tcgetattr(fd)
-        tty.setcbreak(fd)
-
-
-def exit_raw_mode():
-    global _SAVED_TERM_ATTRS
-    if os.name == "nt":
-        # Windows doesn't use termios to exit raw mode
+    db = storage.load("vulnerabilities.json", default=[])
+    if not isinstance(db, list) or not db:
+        print(colored("  Database empty. Run Fetch first.", RED))
         return
-    import termios
-    fd = sys.stdin.fileno()
-    if _SAVED_TERM_ATTRS is not None:
-        termios.tcsetattr(fd, termios.TCSADRAIN, _SAVED_TERM_ATTRS)
-        _SAVED_TERM_ATTRS = None
+
+    vulns = []
+    for e in db:
+        v = Vulnerability.from_dict(e)
+        if v is not None:
+            vulns.append(v)
+
+    matches = matcher.match(vulns, assets)
+    storage.save("matched_vulnerabilities.json", matches)
+
+    if not matches:
+        print(colored("  No risks found for your monitored assets.", GREEN))
+        return
+
+    print()
+    print(colored(f"  {len(matches)} risks found:", BOLD))
+    from collections import Counter
+    counts = Counter(m.get("risk_level", "UNKNOWN") for m in matches)
+    for level in ["CRITICAL", "HIGH", "MEDIUM", "LOW", "UNKNOWN"]:
+        if counts[level] > 0:
+            print(colored(f"    {level}: {counts[level]}", risk_style(level)))
+    print()
+    print(f"  {'CVE_ID':<18} {'Asset':<16} {'Product':<24} {'Risk':<10}")
+    print(colored("  " + "-" * 68, DIM))
+    for m in matches[:50]:
+        cve = m.get("cve_id", "")[:17]
+        asset = m.get("asset", "")[:15]
+        product = m.get("product", "")[:23]
+        risk = m.get("risk_level", "")
+        print(f"  {cve:<18} {asset:<16} {product:<24} {colored(risk, risk_style(risk))}")
+    if len(matches) > 50:
+        print(colored(f"  ... and {len(matches) - 50} more", DIM))
+    print()
 
 
-def get_key():
-    if os.name == "nt":
-        return _get_key_windows()
-    return _get_key_posix()
+def do_search(storage):
+    db = storage.load("vulnerabilities.json", default=[])
+    if not isinstance(db, list) or not db:
+        print(colored("  Database empty. Run Fetch first.", RED))
+        return
+
+    keyword = input("  Search> ").strip()
+    if not keyword:
+        return
+
+    needle = keyword.lower()
+    results = [
+        e for e in db
+        if needle in e.get("cve_id", "").lower()
+        or needle in e.get("vendor", "").lower()
+        or needle in e.get("product", "").lower()
+        or needle in e.get("vulnerability_name", "").lower()
+    ]
+
+    if not results:
+        print(colored(f"  No results for '{keyword}'.", YELLOW))
+        return
+
+    print()
+    print(colored(f"  {len(results)} result(s) for '{keyword}':", BOLD))
+    print()
+    print(f"  {'CVE_ID':<18} {'Vendor':<16} {'Product':<24} {'Severity':<10} {'Date':<12}")
+    print(colored("  " + "-" * 80, DIM))
+    for e in results[:50]:
+        print(f"  {e.get('cve_id', '')[:17]:<18} "
+              f"{e.get('vendor', '')[:15]:<16} "
+              f"{e.get('product', '')[:23]:<24} "
+              f"{colored(e.get('severity', ''), risk_style(e.get('severity', '')))}   "
+              f"{e.get('date_added', '')[:11]}")
+    if len(results) > 50:
+        print(colored(f"  ... and {len(results) - 50} more", DIM))
+    print()
+    return results
 
 
-def _get_key_windows():
-    import msvcrt
-    ch = msvcrt.getwch()
-    if ch in ("\x00", "\xe0"):
-        arrow = msvcrt.getwch()
-        return {"H": "up", "P": "down", "M": "right", "K": "left"}.get(arrow, arrow)
-    if ch in ("\r", "\n"):
-        return "enter"
-    if ch == "\x03":
-        return "ctrl-c"
-    if ch == "\x1b":
-        return "esc"
-    if ch in ("\x7f", "\x08"):
-        return "backspace"
-    return ch
+def do_export(storage, matcher, report):
+    db = storage.load("vulnerabilities.json", default=[])
+    if not isinstance(db, list) or not db:
+        print(colored("  Database empty. Run Fetch first.", RED))
+        return
 
+    print()
+    print(colored("  Export options:", BOLD))
+    print("    [1] Matched assets only")
+    print("    [2] Full database (all CVEs)")
+    print("    [3] Cancel")
+    print()
+    choice = input("  Choice> ").strip()
 
-def _get_key_posix():
-    fd = sys.stdin.fileno()
-    os.set_blocking(fd, True)
-    first = os.read(fd, 1)
-    if not first:
-        return ""
-    if first == b"\x1b":
-        tail = _read_available(fd, 2)
-        combined = first + tail
-        if combined == b"\x1b[64~":
-            return "scroll_up"
-        if combined == b"\x1b[65~":
-            return "scroll_down"
-        return _decode_key(combined)
-    if first[0] >= 0x80:
-        tail = _read_available(fd, 3)
-        try:
-            return (first + tail).decode("utf-8")
-        except UnicodeDecodeError:
-            return ""
-    return _decode_key(first)
+    if choice == "1":
+        matches = storage.load("matched_vulnerabilities.json", default=[])
+        if not isinstance(matches, list) or not matches:
+            print(colored("  No matched assets. Run Scan first.", YELLOW))
+            return
+        rows = matches
+        export_fn = report.export_matched_csv
+    elif choice == "2":
+        rows = db
+        export_fn = report.export_full_csv
+    else:
+        return
 
+    default_path = os.path.join("data", "threat_report.csv")
+    filepath = input(f"  File path [{default_path}]> ").strip()
+    if not filepath:
+        filepath = default_path
 
-def _read_available(fd, limit):
-    os.set_blocking(fd, False)
-    data = b""
     try:
-        while len(data) < limit:
-            chunk = os.read(fd, 1)
-            if not chunk:
-                break
-            data += chunk
-    except BlockingIOError:
-        pass
-    finally:
-        os.set_blocking(fd, True)
-    return data
+        path = export_fn(rows, filepath)
+        print(colored(f"  Exported {len(rows)} records to {path}", GREEN))
+    except Exception as exc:
+        print(colored(f"  Export failed: {exc}", RED))
+    print()
 
 
-def _decode_key(data):
-    if data == b"\x1b[A":
-        return "up"
-    if data == b"\x1b[B":
-        return "down"
-    if data == b"\x1b[C":
-        return "right"
-    if data == b"\x1b[D":
-        return "left"
-    if data in (b"\r", b"\n"):
-        return "enter"
-    if data in (b"\x7f", b"\x08"):
-        return "backspace"
-    if data == b"\x03":
-        return "ctrl-c"
-    if data == b"\x1b":
-        return "esc"
-    try:
-        return data.decode("utf-8")
-    except UnicodeDecodeError:
-        return ""
+def do_list_all(storage):
+    db = storage.load("vulnerabilities.json", default=[])
+    if not isinstance(db, list) or not db:
+        print(colored("  Database empty. Run Fetch first.", RED))
+        return
+
+    print()
+    print(colored(f"  {len(db)} total CVEs in database:", BOLD))
+    print()
+    print(f"  {'CVE_ID':<18} {'Vendor':<16} {'Product':<24} {'Severity':<10} {'Date':<12}")
+    print(colored("  " + "-" * 80, DIM))
+    for e in db[:50]:
+        print(f"  {e.get('cve_id', '')[:17]:<18} "
+              f"{e.get('vendor', '')[:15]:<16} "
+              f"{e.get('product', '')[:23]:<24} "
+              f"{colored(e.get('severity', ''), risk_style(e.get('severity', '')))}   "
+              f"{e.get('date_added', '')[:11]}")
+    if len(db) > 50:
+        print(colored(f"  ... and {len(db) - 50} more", DIM))
+    print()
 
 
-@dataclass
-class MenuItem:
-    key: str
-    label: str
-    description: str
+def do_add_asset(matcher, storage):
+    assets = matcher.load_assets()
+    current = ", ".join(assets) if assets else "(none)"
+    print()
+    print(colored("  Current monitored assets:", BOLD))
+    print(f"    {colored(current, CYAN)}")
+    print()
+    name = input("  Asset name> ").strip()
+    if not name:
+        return
+
+    data = storage.load("monitored_assets.json", default=[])
+    if not isinstance(data, list):
+        data = []
+
+    if name.lower() in [a.lower() for a in data]:
+        print(colored(f"  '{name}' is already in your list.", YELLOW))
+        return
+
+    data.append(name)
+    storage.save("monitored_assets.json", data)
+    print(colored(f"  Added '{name}'.", GREEN))
 
 
-@dataclass
-class Status:
-    database: int = 0
-    assets: int = 0
-    matches: int = 0
+def do_del_asset(matcher, storage):
+    assets = matcher.load_assets()
+    if not assets:
+        print(colored("  No assets to remove.", YELLOW))
+        return
 
+    print()
+    print(colored("  Monitored assets:", BOLD))
+    for i, a in enumerate(assets):
+        print(f"    {i + 1}. {a}")
+    print()
+    choice = input("  Remove which? (#)> ").strip()
 
-def _get_suggested_dirs():
-    home = Path.home()
-    dirs = []
-    for name in ("Desktop", "Documents", "Downloads"):
-        p = home / name
-        if p.exists():
-            dirs.append(str(p))
-    project_data = str(Path(__file__).resolve().parent / "data")
-    dirs.append(project_data)
-    dirs.append(tempfile.gettempdir())
-    return dirs
-
-
-class ThreatIntelApp:
-
-    def __init__(self, console=None):
-        self.console = console or Console(force_terminal=True)
-        self.storage = Storage()
-        self.scraper = ThreatScraper()
-        self.matcher = AssetMatcher(self.storage)
-        self.report = ReportGenerator(self.storage)
-
-        self.menu_items = [
-            MenuItem("fetch", "Fetch Threat CVEs", "Download latest CVE data"),
-            MenuItem("scan", "Scan Assets vs Threats", "Match your desired Assets against known CVEs"),
-            MenuItem("search", "Search CVEs", "Find vulnerabilities by keyword or vendor"),
-            MenuItem("list", "View All CVEs", "Browse every CVE"),
-            MenuItem("add_asset", "Add Asset", "Add asset to your monitored list"),
-            MenuItem("del_asset", "Remove Asset", "Remove asset from monitored list"),
-            MenuItem("export", "Export to CSV", "Save data to a CSV file"),
-            MenuItem("quit", "Exit", "Close ThreatIntel Engine"),
-        ]
-        self.selected = 0
-        self.input_prompt = None
-        self.input_buffer = ""
-        self.output = self._idle_panel()
-        self.live = None
-        self.status = self._read_status()
-        self.quit_requested = False
-
-        # scrollable view state
-        self._scroll_heading = Text("")
-        self._scroll_entries = []
-        self._scroll_columns = []
-        self._scroll_offset = 0
-        self._scroll_title = ""
-
-        self._last_search_results = []
-
-        # sub-menus for export
-        self._export_active = False
-        self._export_selected = 0
-        self._export_options = [
-            ("matched", "Matched assets only"),
-            ("full", "Full database (all CVEs)"),
-            ("search", "Last search results"),
-        ]
-
-        # path picker popup
-        self._path_popup_active = False
-        self._path_popup_selected = 0
-        self._path_popup_dirs = _get_suggested_dirs()
-        self._path_popup_custom = ""
-        self._path_popup_custom_mode = False
-        self._path_popup_rows = []
-        self._path_popup_export_type = ""
-        self._path_popup_rows_data = []
-
-    def _read_status(self):
-        db = self.storage.load("vulnerabilities.json", default=[])
-        matches = self.storage.load("matched_vulnerabilities.json", default=[])
-        return Status(
-            database=len(db) if isinstance(db, list) else 0,
-            assets=len(self.matcher.load_assets()),
-            matches=len(matches) if isinstance(matches, list) else 0,
-        )
-
-    def _refresh_status(self):
-        self.status = self._read_status()
-
-    # scrollable list render
-
-    def _set_scrollable(self, heading, entries, columns, title=""):
-        self._scroll_heading = heading
-        self._scroll_entries = entries
-        self._scroll_columns = columns
-        self._scroll_title = title
-        self._scroll_offset = 0
-        self._render_scroll_window()
-
-    def _render_scroll_window(self):
-        entries = getattr(self, "_scroll_entries", [])
-        columns = getattr(self, "_scroll_columns", [])
-        heading = getattr(self, "_scroll_heading", Text(""))
-        total = len(entries)
-        if total == 0:
-            self._set_output(Panel(heading, title=self._scroll_title))
+    if choice.isdigit():
+        idx = int(choice) - 1
+        if 0 <= idx < len(assets):
+            name = assets[idx]
+            data = storage.load("monitored_assets.json", default=[])
+            if not isinstance(data, list):
+                data = []
+            data = [a for a in data if a.lower() != name.lower()]
+            storage.save("monitored_assets.json", data)
+            print(colored(f"  Removed '{name}'.", GREEN))
             return
-
-        #dynamic scale page height based on active window size
-        console_height = self.console.size.height
-        dynamic_page_size = max(5, console_height - 12)
-
-        max_offset = max(0, total - dynamic_page_size)
-        self._scroll_offset = max(0, min(self._scroll_offset, max_offset))
-
-        start = self._scroll_offset
-        end = min(start + dynamic_page_size, total)
-        page_entries = entries[start:end]
-
-        table = Table(
-            title=None, border_style=ACCENT, box=box.SIMPLE_HEAD,
-            pad_edge=False, expand=True,
-        )
-        for col_header, _, width, _ in columns:
-            table.add_column(
-                col_header, header_style="bold", width=width,
-                no_wrap=True, overflow="ellipsis",
-            )
-        for entry in page_entries:
-            cells = []
-            for _, key, width, style_fn in columns:
-                val = _truncate(str(entry.get(key, "")), width - 1)
-                style = style_fn(entry.get(key, "")) if style_fn else None
-                cells.append(Text(val, style=style) if style else Text(val))
-            table.add_row(*cells)
-
-        pos = Text()
-        pos.append(f"Showing {start + 1}-{end} of {total}", style="bold")
-        if total > dynamic_page_size:
-            pos.append("  (up/down to scroll, Esc to go back)", style=MUTED)
-
-        content = Group(heading, Text(""), pos, table)
-        if end < total:
-            content = Group(content, Text(f"\n--- {total - end} more below ---", style=MUTED))
-
-        self.output = Panel(
-            content,
-            title=f"[bold]{self._scroll_title}",
-            border_style=ACCENT, box=box.HEAVY,
-        )
-        self._update()
-
-    def _handle_scroll(self, key):
-        if not getattr(self, "_scroll_entries", None):
-            return False
-        if key in ("up", "scroll_up"):
-            self._scroll_offset -= 1
-            self._render_scroll_window()
-            return True
-        if key in ("down", "scroll_down"):
-            self._scroll_offset += 1
-            self._render_scroll_window()
-            return True
-        return False
-
-    # panels
-
-    def _idle_panel(self):
-        group = Group(
-            Align.left(Text("ThreatIntel Engine", style=f"bold {ACCENT}")),
-            Text(""),
-            Text("Scrapes CVE and known exploits", style=MUTED),
-            Text("Matches against your monitored Asset and exports CSV reports.", style=MUTED),
-            Text(""),
-            Text("Use  up / down  to move,  Enter  to select,  q  to quit.", style=MUTED),
-        )
-        return Panel(group, title="[bold]Dashboard", border_style=ACCENT, box=box.HEAVY)
-
-    def render_header(self):
-        status = self.status
-        st = Text()
-        st.append("db ", style=MUTED)
-        st.append(str(status.database), style="bold")
-        st.append("  assets ", style=MUTED)
-        st.append(str(status.assets), style="bold")
-        st.append("  matched ", style=MUTED)
-        st.append(str(status.matches), style="bold")
-        group = Group(
-            Align.center(Text("THREATINTEL  ENGINE", style=f"bold {ACCENT}")),
-            Align.center(st),
-        )
-        return Panel(
-            Align.center(group),
-            title=f"[{ACCENT}]ThreatIntel[/]",
-            subtitle=f"v{VERSION}",
-            border_style=ACCENT,
-            box=box.ROUNDED,
-        )
-
-    def render_menu(self):
-        lines = Text()
-        for index, item in enumerate(self.menu_items):
-            cursor = ">" if index == self.selected else " "
-            if index == self.selected:
-                lines.append(f" {cursor} {item.label}\n", style="bold reverse")
-            else:
-                lines.append(f" {cursor} {item.label}\n")
-            lines.append(f"   {item.description}\n", style=MUTED)
-            lines.append("\n")
-        return Panel(lines, title="[bold]Menu", border_style=ACCENT, box=box.HEAVY)
-
-    def render_footer(self):
-        if self._path_popup_active:
-            if self._path_popup_custom_mode:
-                content = Align.left(Text("type path   Enter confirm   Esc cancel", style=MUTED))
-            else:
-                content = Align.left(Text("up/down choose   Enter select   type to custom path   Esc cancel", style=MUTED))
-        elif self.input_prompt is not None:
-            prompt = Text()
-            prompt.append(f"{self.input_prompt}> ", style=f"bold {ACCENT}")
-            prompt.append(self.input_buffer, style="bold")
-            prompt.append("_", style="blink")
-            content = Align.left(prompt)
-        elif self._export_active:
-            content = Align.left(Text("up/down choose   Enter confirm   Esc cancel", style=MUTED))
-        elif getattr(self, "_scroll_entries", None):
-            content = Align.left(Text("up/down scroll   Esc back to menu", style=MUTED))
-        else:
-            content = Align.left(Text("up/down move   Enter select   q quit", style=MUTED))
-        return Panel(content, border_style=ACCENT, box=box.HEAVY)
-
-    def render(self):
-        layout = Layout()
-        layout.split_column(
-            Layout(name="header", ratio=1),
-            Layout(name="body", ratio=8),
-            Layout(name="footer", ratio=1),
-        )
-        layout["body"].split_row(
-            Layout(self.render_menu(), name="menu", ratio=2),
-            Layout(self.output, name="output", ratio=5),
-        )
-        layout["header"].update(self.render_header())
-        layout["footer"].update(self.render_footer())
-        return layout
-
-    def _update(self):
-        if self.live is not None:
-            self.live.update(self.render(), refresh=True)
-
-    def _set_output(self, renderable):
-        self.output = renderable
-        self._update()
-
-    def _error_panel(self, message):
-        return Panel(
-            Text(f"Error: {message}", style=DANGER),
-            title="[bold]Error", border_style=DANGER, box=box.HEAVY,
-        )
-
-    # sub-menu export
-
-    def _export_sub_menu(self):
-        lines = Text()
-        lines.append("What do you want to export ?\n\n", style="bold")
-        for i, (key, label) in enumerate(self._export_options):
-            cursor = ">" if i == self._export_selected else " "
-            style = "bold reverse" if i == self._export_selected else None
-            lines.append(f"  {cursor} {label}\n", style=style)
-            if key == "matched":
-                lines.append(f"      ({self.status.matches} records)\n", style=MUTED)
-            elif key == "full":
-                lines.append(f"      ({self.status.database} records)\n", style=MUTED)
-            elif key == "search":
-                lines.append(f"      ({len(self._last_search_results)} records)\n", style=MUTED)
-            lines.append("\n")
-        lines.append("up/down choose, Enter confirm, Esc back", style=MUTED)
-        return Panel(lines, title="[bold]Export to CSV", border_style=ACCENT, box=box.HEAVY)
-
-    def _build_export_rows(self, export_type):
-        if export_type == "search":
-            return self._last_search_results
-        if export_type == "full":
-            db = self.storage.load("vulnerabilities.json", default=[])
-            return db if isinstance(db, list) else []
-        db = self.storage.load("vulnerabilities.json", default=[])
-        if not isinstance(db, list) or not db:
-            return []
-        assets = self.matcher.load_assets()
-        if not assets:
-            return []
-        vulns = [Vulnerability.from_dict(e) for e in db]
-        return self.matcher.match(vulns, assets)
-
-    # path picker
-
-    def _build_path_popup(self):
-        lines = Text()
-        lines.append("Choose export location\n\n", style="bold")
-
-        if self._path_popup_custom_mode:
-            lines.append("  > ", style=f"bold {ACCENT}")
-            lines.append(self._path_popup_custom, style="bold")
-            lines.append("_", style="blink")
-            lines.append("\n\n", style=MUTED)
-            lines.append("Press Enter to confirm, Esc to cancel", style=MUTED)
-        else:
-            for i, d in enumerate(self._path_popup_dirs):
-                cursor = ">" if i == self._path_popup_selected else " "
-                style = "bold reverse" if i == self._path_popup_selected else None
-                lines.append(f"  {cursor} {d}\n", style=style)
-            lines.append("\n  > ", style=f"bold {ACCENT}")
-            lines.append(self._path_popup_custom, style="bold")
-            lines.append("_", style="blink")
-            lines.append("\n\n", style=MUTED)
-            lines.append("up/down select folder   type custom path   Enter confirm   Esc cancel", style=MUTED)
-
-        label = dict(self._export_options).get(self._path_popup_export_type, "")
-        return Panel(lines, title=f"[bold]Export: {label}", border_style=ACCENT, box=box.HEAVY)
-
-    def _open_path_popup(self, export_type, rows):
-        self._path_popup_active = True
-        self._path_popup_selected = 0
-        self._path_popup_custom = ""
-        self._path_popup_custom_mode = False
-        self._path_popup_export_type = export_type
-        self._path_popup_rows = rows
-        self._set_output(self._build_path_popup())
-
-    def _close_path_popup(self):
-        self._path_popup_active = False
-        self._path_popup_custom_mode = False
-
-    def _do_export_to_path(self, filepath):
-        export_type = self._path_popup_export_type
-        rows = self._path_popup_rows
-        self._close_path_popup()
-        try:
-            if export_type == "full":
-                path = self.report.export_full_csv(rows, filepath)
-            elif export_type == "search":
-                path = self.report.export_search_csv(rows, filepath)
-            else:
-                path = self.report.export_matched_csv(rows, filepath)
-        except Exception as exc:
-            self._set_output(self._error_panel(f"Export failed: {exc}"))
-            return
-        summary = Text()
-        summary.append("Export done\n", style=OK)
-        summary.append(f"  {len(rows)} records saved\n\n", style="bold")
-        summary.append(f"  File: {path}", style=ACCENT)
-        self._set_output(Panel(
-            summary, title="[bold]Export to CSV", border_style=ACCENT, box=box.HEAVY,
-        ))
-
-    def _handle_path_popup(self, key):
-        if not self._path_popup_active:
-            return False
-
-        if self._path_popup_custom_mode:
-            if key == "enter":
-                chosen = self._path_popup_custom.strip()
-                if chosen:
-                    self._do_export_to_path(chosen)
-                else:
-                    self._close_path_popup()
-                return True
-            if key == "esc":
-                self._close_path_popup()
-                self._set_output(self._idle_panel())
-                return True
-            if key == "backspace":
-                self._path_popup_custom = self._path_popup_custom[:-1]
-                self._set_output(self._build_path_popup())
-                return True
-            if isinstance(key, str) and len(key) == 1 and key.isprintable():
-                self._path_popup_custom += key
-                self._set_output(self._build_path_popup())
-                return True
-            return True
-
-        if key == "up":
-            self._path_popup_selected = (self._path_popup_selected - 1) % len(self._path_popup_dirs)
-            self._set_output(self._build_path_popup())
-            return True
-        if key == "down":
-            self._path_popup_selected = (self._path_popup_selected + 1) % len(self._path_popup_dirs)
-            self._set_output(self._build_path_popup())
-            return True
-        if key == "enter":
-            chosen_dir = self._path_popup_dirs[self._path_popup_selected]
-            filename = "threat_report.csv"
-            filepath = os.path.join(chosen_dir, filename)
-            self._do_export_to_path(filepath)
-            return True
-        if key == "esc":
-            self._close_path_popup()
-            self._set_output(self._idle_panel())
-            return True
-        if isinstance(key, str) and len(key) == 1 and key.isprintable():
-            self._path_popup_custom_mode = True
-            self._path_popup_custom = key
-            self._set_output(self._build_path_popup())
-            return True
-        return True
-
-    # actions
-    def do_fetch(self):
-        self._set_output(Panel(
-            Group(
-                Text("Downloading ...", style=WARN),
-            ),
-            title="[bold]Fetch Threat", border_style=ACCENT, box=box.HEAVY,
-        ))
-        try:
-            vulns = self.scraper.scrape_all()
-            added, total = self.storage.merge_vulnerabilities(vulns)
-        except Exception as exc:
-            self._set_output(self._error_panel(f"{exc} -- check your internet."))
-            return
-
-        criticals = sum(1 for v in vulns if v.is_critical())
-        summary = Text()
-        summary.append("Done\n", style=OK)
-        summary.append(f"  {len(vulns)} vulnerabilities downloaded", style="bold")
-        summary.append(f" ({criticals} critical, {len(vulns) - criticals} high)\n")
-        if added:
-            summary.append(f"  {added} new entries added\n", style=OK)
-        else:
-            summary.append("  Already up to date\n", style=WARN)
-        summary.append(f"  Database: {total} total\n", style="bold")
-        self._refresh_status()
-        self._set_output(Panel(
-            Group(summary, Text(""), Text("Use View All CVEs or Search to browse.", style=MUTED)),
-            title="[bold]Fetch Threat Feeds", border_style=ACCENT, box=box.HEAVY,
-        ))
-
-    def do_scan(self):
-        assets = self.matcher.load_assets()
-        if not assets:
-            self._set_output(self._error_panel("No assets found. Use Add Asset first."))
-            return
-        db = self.storage.load("vulnerabilities.json", default=[])
-        if not isinstance(db, list) or not db:
-            self._set_output(self._error_panel("Database empty. Run Fetch first."))
-            return
-
-        vulns = [Vulnerability.from_dict(e) for e in db]
-        matches = self.matcher.match(vulns, assets)
-        self.storage.save("matched_vulnerabilities.json", matches)
-
-        if not matches:
-            self._set_output(Panel(
-                Text("No risks found for your monitored assets.", style=OK),
-                title="[bold]Scan Assets", border_style=ACCENT, box=box.HEAVY,
-            ))
-            self._refresh_status()
-            return
-
-        summ = self.report.summarize(matches)
-        heading = Text()
-        heading.append(f"{len(matches)} risks found  ", style="bold")
-        for level, count in summ.items():
-            heading.append(f"{level}:{count}  ", style=risk_color(level))
-
-        columns = [
-            ("CVE_ID", "cve_id", 18, lambda s: "bold"),
-            ("Asset", "asset", 14, None),
-            ("Product", "product", 36, None),
-            ("Risk", "risk_level", 10, risk_color),
-            ("Detected", "date_detected", 12, None),
-        ]
-
-        self._refresh_status()
-        self._set_scrollable(heading, matches, columns, "Scan Assets vs Threats")
-
-    def do_search(self, keyword):
-        db = self.storage.load("vulnerabilities.json", default=[])
-        if not isinstance(db, list) or not db:
-            self._set_output(self._error_panel("Database empty. Run Fetch first."))
-            return
-
-        needle = keyword.lower()
-        results = [
-            e for e in db
-            if needle in e.get("cve_id", "").lower()
-            or needle in e.get("vendor", "").lower()
-            or needle in e.get("product", "").lower()
-            or needle in e.get("vulnerability_name", "").lower()
-        ]
-        self._last_search_results = results
-
-        if not results:
-            self._set_output(Panel(
-                Group(Text("No results for ", style="bold"), Text(repr(keyword), style=ACCENT)),
-                title="[bold]Search", border_style=ACCENT, box=box.HEAVY,
-            ))
-            return
-
-        heading = Text()
-        heading.append(f"{len(results)} result(s) for ", style="bold")
-        heading.append(repr(keyword), style=ACCENT)
-        heading.append("\nAll results shown. Use Export > Last search results to save.", style=MUTED)
-
-        columns = [
-            ("CVE_ID", "cve_id", 18, lambda s: "bold"),
-            ("Vendor", "vendor", 14, None),
-            ("Product", "product", 36, None),
-            ("Severity", "severity", 10, risk_color),
-            ("Date", "date_added", 12, None),
-        ]
-
-        self._set_scrollable(heading, results, columns, "Search")
-
-    def do_list_all(self):
-        db = self.storage.load("vulnerabilities.json", default=[])
-        if not isinstance(db, list) or not db:
-            self._set_output(self._error_panel("Database empty. Run Fetch first."))
-            return
-
-        heading = Text(f"{len(db)} total CVEs in database", style="bold")
-
-        columns = [
-            ("CVE_ID", "cve_id", 18, lambda s: "bold"),
-            ("Vendor", "vendor", 14, None),
-            ("Product", "product", 36, None),
-            ("Severity", "severity", 10, risk_color),
-            ("Date", "date_added", 12, None),
-        ]
-
-        self._set_scrollable(heading, db, columns, "All CVEs")
-
-    def do_add_asset(self):
-        assets = self.matcher.load_assets()
-        current = ", ".join(assets) if assets else "(none)"
-        lines = Text()
-        lines.append("Current monitored assets:\n\n", style="bold")
-        lines.append(f"  {current}\n\n", style=ACCENT)
-        lines.append("Type a new asset name and press Enter.\n", style=MUTED)
-        lines.append("Press Esc to go back.\n", style=MUTED)
-        self._set_output(Panel(
-            lines, title="[bold]Add Asset", border_style=ACCENT, box=box.HEAVY,
-        ))
-
-        self.input_prompt = "Asset name"
-        self.input_buffer = ""
-        self._update()
-
-        while True:
-            self._update()
-            key = get_key()
-            if key == "enter":
-                name = self.input_buffer.strip()
-                self.input_prompt = None
-                if name:
-                    self._save_asset(name)
-                return
-            if key in ("esc", "ctrl-c"):
-                self.input_prompt = None
-                return
-            if key == "backspace":
-                self.input_buffer = self.input_buffer[:-1]
-            elif isinstance(key, str) and len(key) == 1 and key.isprintable():
-                self.input_buffer += key
-
-    def _save_asset(self, name):
-        filename = "monitored_assets.json"
-        data = self.storage.load(filename, default=[])
-        if not isinstance(data, list):
-            data = []
-
-        if name.lower() in [a.lower() for a in data]:
-            self._set_output(Panel(
-                Text(f"'{name}' is already in your list.", style=WARN),
-                title="[bold]Add Asset", border_style=ACCENT, box=box.HEAVY,
-            ))
-            self._refresh_status()
-            return
-
-        data.append(name)
-        self.storage.save(filename, data)
-        self._refresh_status()
-
-        updated = self.matcher.load_assets()
-        lines = Text()
-        lines.append(f"Added '{name}'.\n\n", style=OK)
-        lines.append("Monitored assets:\n\n", style="bold")
-        for a in updated:
-            marker = " * " if a == name else "   "
-            lines.append(f"{marker}{a}\n", style=ACCENT if a == name else "")
-        self._set_output(Panel(
-            lines, title="[bold]Add Asset", border_style=ACCENT, box=box.HEAVY,
-        ))
-
-    def do_del_asset(self):
-        assets = self.matcher.load_assets()
-        if not assets:
-            self._set_output(Panel(
-                Text("No assets to remove.", style=WARN),
-                title="[bold]Remove Asset", border_style=ACCENT, box=box.HEAVY,
-            ))
-            return
-
-        lines = Text()
-        lines.append("Current monitored assets:\n\n", style="bold")
-        for i, a in enumerate(assets):
-            lines.append(f"  {i + 1}. {a}\n", style=ACCENT)
-        lines.append("\nType the number of the asset to remove.\n", style=MUTED)
-        lines.append("Press Esc to go back.\n", style=MUTED)
-        self._set_output(Panel(
-            lines, title="[bold]Remove Asset", border_style=ACCENT, box=box.HEAVY,
-        ))
-
-        self.input_prompt = "Asset #"
-        self.input_buffer = ""
-        self._update()
-
-        while True:
-            self._update()
-            key = get_key()
-            if key == "enter":
-                choice = self.input_buffer.strip()
-                self.input_prompt = None
-                if choice.isdigit():
-                    idx = int(choice) - 1
-                    if 0 <= idx < len(assets):
-                        self._remove_asset(assets[idx])
-                        return
-                self._set_output(self._error_panel("Invalid number."))
-                return
-            if key in ("esc", "ctrl-c"):
-                self.input_prompt = None
-                return
-            if key == "backspace":
-                self.input_buffer = self.input_buffer[:-1]
-            elif isinstance(key, str) and len(key) == 1 and key.isprintable():
-                self.input_buffer += key
-
-    def _remove_asset(self, name):
-        filename = "monitored_assets.json"
-        data = self.storage.load(filename, default=[])
-        if not isinstance(data, list):
-            data = []
-
-        data = [a for a in data if a.lower() != name.lower()]
-        self.storage.save(filename, data)
-        self._refresh_status()
-
-        updated = self.matcher.load_assets()
-        lines = Text()
-        lines.append(f"Removed '{name}'.\n\n", style=OK)
-        if updated:
-            lines.append("Remaining assets:\n\n", style="bold")
-            for a in updated:
-                lines.append(f"  {a}\n", style=ACCENT)
-        else:
-            lines.append("No assets left.\n", style=MUTED)
-        self._set_output(Panel(
-            lines, title="[bold]Remove Asset", border_style=ACCENT, box=box.HEAVY,
-        ))
-
-    def do_export(self):
-        self._export_active = True
-        self._export_selected = 0
-        self._set_output(self._export_sub_menu())
-
-    def prompt_search(self):
-        self.input_prompt = "Search"
-        self.input_buffer = ""
-        self._set_output(self._idle_panel())
-        while True:
-            self._update()
-            key = get_key()
-            if key == "enter":
-                kw = self.input_buffer
-                self.input_prompt = None
-                if kw.strip():
-                    self.do_search(kw)
-                return
-            if key in ("esc", "ctrl-c"):
-                self.input_prompt = None
-                return
-            if key == "backspace":
-                self.input_buffer = self.input_buffer[:-1]
-            elif isinstance(key, str) and len(key) == 1 and key.isprintable():
-                self.input_buffer += key
-
-    def activate(self):
-        item = self.menu_items[self.selected]
-        if item.key == "fetch":
-            self.do_fetch()
-        elif item.key == "scan":
-            self.do_scan()
-        elif item.key == "search":
-            self.prompt_search()
-        elif item.key == "list":
-            self.do_list_all()
-        elif item.key == "add_asset":
-            self.do_add_asset()
-        elif item.key == "del_asset":
-            self.do_del_asset()
-        elif item.key == "export":
-            self.do_export()
-        elif item.key == "quit":
-            self.quit_requested = True
-
-    def _handle_export_nav(self, key):
-        if not self._export_active:
-            return False
-        if key == "up":
-            self._export_selected = (self._export_selected - 1) % len(self._export_options)
-            self._set_output(self._export_sub_menu())
-            return True
-        if key == "down":
-            self._export_selected = (self._export_selected + 1) % len(self._export_options)
-            self._set_output(self._export_sub_menu())
-            return True
-        if key == "enter":
-            exp_type = self._export_options[self._export_selected][0]
-            self._export_active = False
-            rows = self._build_export_rows(exp_type)
-            if not rows:
-                self._set_output(self._error_panel("Nothing to export for this selection."))
-                return True
-            self._open_path_popup(exp_type, rows)
-            return True
-        if key == "esc":
-            self._export_active = False
-            self._set_output(self._idle_panel())
-            return True
-        return False
-
-    def run_tui(self):
-        try:
-            enter_raw_mode()
-            with Live(
-                self.render(),
-                console=self.console,
-                screen=True,
-                auto_refresh=False,
-            ) as live:
-                self.live = live
-                while not self.quit_requested:
-                    self._update()
-                    key = get_key()
-                    if key == "ctrl-c":
-                        break
-                    if key == "q" and self.input_prompt is None and not self._export_active and not self._path_popup_active and not getattr(self, "_scroll_entries", None):
-                        break
-
-                    if self.input_prompt is not None:
-                        continue
-
-                    if self._path_popup_active:
-                        self._handle_path_popup(key)
-                        continue
-
-                    if self._export_active:
-                        self._handle_export_nav(key)
-                        continue
-
-                    if getattr(self, "_scroll_entries", None):
-                        if key == "esc":
-                            self._scroll_entries = []
-                            self._scroll_offset = 0
-                            self._set_output(self._idle_panel())
-                            continue
-                        if self._handle_scroll(key):
-                            continue
-
-                    if key == "up":
-                        self.selected = (self.selected - 1) % len(self.menu_items)
-                    elif key == "down":
-                        self.selected = (self.selected + 1) % len(self.menu_items)
-                    elif key in ("enter", "right"):
-                        self.activate()
-        except KeyboardInterrupt:
-            pass
-        finally:
-            exit_raw_mode()
-
-    def run_line(self):
-        self.console.print(self.render_header())
-        while not self.quit_requested:
-            self.console.print()
-            for index, item in enumerate(self.menu_items):
-                marker = ">" if index == self.selected else " "
-                style = "bold " + ACCENT if index == self.selected else "default"
-                self.console.print(f"  {marker} {index + 1}. {item.label}", style=style)
-            try:
-                choice = input("\n  ThreatIntel> ").strip()
-            except (EOFError, KeyboardInterrupt):
-                self.console.print("\n  Bye.")
-                return
-            if not choice.isdigit():
-                continue
-            index = int(choice) - 1
-            if not 0 <= index < len(self.menu_items):
-                continue
-            self.selected = index
-            item = self.menu_items[index]
-            if item.key == "fetch":
-                self.do_fetch()
-            elif item.key == "scan":
-                self.do_scan()
-            elif item.key == "search":
-                keyword = input("  Search> ").strip()
-                self.do_search(keyword)
-            elif item.key == "list":
-                self.do_list_all()
-            elif item.key == "add_asset":
-                name = input("  Asset name> ").strip()
-                if name:
-                    self._save_asset(name)
-            elif item.key == "del_asset":
-                assets = self.matcher.load_assets()
-                if not assets:
-                    self.console.print("  No assets to remove.", style=WARN)
-                else:
-                    self.console.print("\n  Monitored assets:")
-                    for i, a in enumerate(assets):
-                        self.console.print(f"    {i+1}. {a}")
-                    choice = input("  Remove which ? (# or name)> ").strip()
-                    if choice.isdigit():
-                        idx = int(choice) - 1
-                        if 0 <= idx < len(assets):
-                            self._remove_asset(assets[idx])
-                        else:
-                            self.console.print("  Invalid number.", style=WARN)
-                    elif choice:
-                        self._remove_asset(choice)
-            elif item.key == "export":
-                self.console.print("\n  What to export?")
-                for i, (k, label) in enumerate(self._export_options):
-                    self.console.print(f"    {i+1}. {label}")
-                exp_choice = input("  Choice> ").strip()
-                if exp_choice.isdigit() and 1 <= int(exp_choice) <= len(self._export_options):
-                    exp_type = self._export_options[int(exp_choice) - 1][0]
-                    rows = self._build_export_rows(exp_type)
-                    if not rows:
-                        self.console.print("  Nothing to export.", style=WARN)
-                    else:
-                        default_path = os.path.join("data", "threat_report.csv")
-                        dirs = _get_suggested_dirs()
-                        self.console.print("\n  Suggested directories:")
-                        for i, d in enumerate(dirs):
-                            self.console.print(f"    {i+1}. {d}")
-                        loc = input(f"  Choose # or type path [{default_path}]> ").strip()
-                        if loc.isdigit() and 1 <= int(loc) <= len(dirs):
-                            filename = "threat_report.csv"
-                            filepath = os.path.join(dirs[int(loc) - 1], filename)
-                        elif loc:
-                            filepath = loc
-                        else:
-                            filepath = default_path
-                        try:
-                            if exp_type == "full":
-                                path = self.report.export_full_csv(rows, filepath)
-                            elif exp_type == "search":
-                                path = self.report.export_search_csv(rows, filepath)
-                            else:
-                                path = self.report.export_matched_csv(rows, filepath)
-                            self.console.print(f"  Exported {len(rows)} records to {path}", style=OK)
-                        except Exception as exc:
-                            self.console.print(f"  Export failed: {exc}", style=DANGER)
-            elif item.key == "quit":
-                self.quit_requested = True
-            self.console.print(self.output)
-
-    def run(self):
-        if sys.stdin.isatty():
-            self.run_tui()
-        else:
-            self.run_line()
+    print(colored("  Invalid selection.", RED))
 
 
 def main():
-    app = ThreatIntelApp()
+    storage = Storage()
+    scraper = ThreatScraper()
+    matcher = AssetMatcher(storage)
+    report = ReportGenerator(storage)
+
+    print()
+    print(colored("  ThreatIntel Engine v" + VERSION, BOLD + CYAN))
+    print(colored("  Press Ctrl+C at any time to exit.", DIM))
+
     try:
-        app.run()
-    except Exception as exc:
-        app.console.print(f"[{DANGER}]Fatal:[/] {exc}")
+        while True:
+            status = read_status(matcher, storage)
+            print_header(status)
+            print_menu()
+
+            choice = input("  ThreatIntel> ").strip()
+
+            if choice == "1":
+                do_fetch(scraper, storage)
+            elif choice == "2":
+                do_scan(matcher, storage)
+            elif choice == "3":
+                do_search(storage)
+            elif choice == "4":
+                do_export(storage, matcher, report)
+            elif choice == "5":
+                print(colored("  Goodbye.", CYAN))
+                break
+            elif choice.lower() in ("a", "add"):
+                do_add_asset(matcher, storage)
+            elif choice.lower() in ("r", "remove"):
+                do_del_asset(matcher, storage)
+            elif choice.lower() in ("v", "view"):
+                do_list_all(storage)
+            elif choice.lower() in ("t", "tools"):
+                run_tools_menu(matcher, storage)
+            elif choice.lower() in ("q", "quit", "exit"):
+                print(colored("  Goodbye.", CYAN))
+                break
+            else:
+                print(colored("  Invalid option. Choose 1-5.", YELLOW))
+    except KeyboardInterrupt:
+        print(colored("\n  Interrupted. Goodbye.", CYAN))
+    except EOFError:
+        print(colored("\n  Goodbye.", CYAN))
+
+
+def run_tools_menu(matcher, storage):
+    while True:
+        print_extras_menu()
+        choice = input("  Tools> ").strip().lower()
+        if choice == "a":
+            do_add_asset(matcher, storage)
+        elif choice == "r":
+            do_del_asset(matcher, storage)
+        elif choice == "v":
+            do_list_all(storage)
+        elif choice in ("b", ""):
+            break
+        else:
+            print(colored("  Invalid option.", YELLOW))
+
+
+def run_demo_milestone1():
+    scraper = ThreatScraper()
+    print(colored("\n  === Milestone 1 Demonstration ===", BOLD + CYAN))
+    print(colored("  Fetching live CVE data from multiple sources...\n", DIM))
+    vulns, results = scraper.scrape_all()
+    print(colored("  Source results:", BOLD))
+    for r in results:
+        if r.success:
+            print(colored(f"    [OK] {r.source}: {len(r.vulns)} vulnerabilities", GREEN))
+        else:
+            print(colored(f"    [FAIL] {r.source}: {r.error}", RED))
+    print()
+    print(colored(f"  Total unique vulnerabilities: {len(vulns)}", BOLD))
+    print()
+    if vulns:
+        print(colored("  First 10 parsed Vulnerability objects:", BOLD))
+        print()
+        for i, v in enumerate(vulns[:10], 1):
+            print(f"  {i:>2}. {v}")
+    print()
+    return vulns
+
+
+def run_demo_milestone2(vulns):
+    storage = Storage()
+    matcher = AssetMatcher(storage)
+    assets = matcher.load_assets()
+    print(colored("\n  === Milestone 2 Demonstration ===", BOLD + CYAN))
+    print(colored(f"  Monitored assets: {', '.join(assets)}", BOLD))
+    print()
+    if not vulns:
+        vulns_dicts = storage.load("vulnerabilities.json", default=[])
+        vulns = []
+        for e in vulns_dicts:
+            v = Vulnerability.from_dict(e)
+            if v:
+                vulns.append(v)
+    matches = matcher.match(vulns, assets)
+    if matches:
+        print(colored(f"  {len(matches)} matched threats found:", BOLD))
+        print()
+        for m in matches[:10]:
+            print(f"    Asset: {colored(m['asset'], CYAN)}")
+            print(f"    CVE: {m['cve_id']}   Vendor: {m['vendor']}   Product: {m['product']}")
+            print(f"    Severity: {colored(m['severity'], risk_style(m['severity']))}"
+                  f"   Risk: {colored(m['risk_level'], risk_style(m['risk_level']))}")
+            print()
+    else:
+        print(colored("  No matches found.", YELLOW))
+    print()
+    return matches
+
+
+def run_demo_milestone3(storage, matches=None):
+    print(colored("\n  === Milestone 3 Demonstration ===", BOLD + CYAN))
+    vulns_dicts = storage.load("vulnerabilities.json", default=[])
+    print(colored(f"  Database contains {len(vulns_dicts)} vulnerabilities.", BOLD))
+    print()
+    report = ReportGenerator(storage)
+    path = os.path.join("data", "demo_report.csv")
+    if matches:
+        report.export_matched_csv(matches, path)
+        print(colored(f"  Exported {len(matches)} matched records to {path}", GREEN))
+    else:
+        report.export_full_csv(vulns_dicts, path)
+        print(colored(f"  Exported {len(vulns_dicts)} records to {path}", GREEN))
+    print()
+    print(colored("  Running merge again to verify no duplicates:", DIM))
+    vulns = []
+    for e in vulns_dicts[:5]:
+        v = Vulnerability.from_dict(e)
+        if v:
+            vulns.append(v)
+    result = storage.merge_vulnerabilities(vulns)
+    print(f"    Added: {result['added']}  Duplicates: {result['duplicates']}  "
+          f"Total: {result['total']}")
+    print()
 
 
 if __name__ == "__main__":
-    main()
+    if "--demo" in sys.argv:
+        vulns = run_demo_milestone1()
+        matches = run_demo_milestone2(vulns)
+        run_demo_milestone3(Storage(), matches)
+        print(colored("  All demonstrations complete.", GREEN + BOLD))
+        print()
+    else:
+        main()
