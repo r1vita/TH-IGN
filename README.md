@@ -28,8 +28,6 @@ python -m venv venv
 Set-ExecutionPolicy -ExecutionPolicy Process -Scope CurrentUser
 .\venv\Scripts\activate
 python3 -m pip install -r requirements.txt
-python3 -m pip install windows-curses
-New-Item -Path ".\venv\Lib\site-packages\termios.py" -ItemType File
 ```
 
 ## Step 2 - Run the .py file
